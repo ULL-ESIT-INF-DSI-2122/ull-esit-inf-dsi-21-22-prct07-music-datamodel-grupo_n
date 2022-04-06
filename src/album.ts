@@ -1,5 +1,3 @@
-import { Artist } from "./artist";
-import { Group } from "./group";
 import { MusicGender } from "./music_gender";
 import { Song } from "./song";
 
@@ -92,7 +90,19 @@ export class Album {
    * Añade una cancion a las canciones existentes
    * @param new_song nueva cancion a agregar
    */
-  addSong(new_song: Song) {
+  addSong(new_song: Song): boolean {
+    let aux: number = this.album_songs.length;
     this.album_songs.push(new_song);
+    return(aux != this.album_songs.length);
+  }
+
+  /**
+   * Elimina la ultima cancion añadida
+   * @returns 
+   */
+  deleteLastSong(): boolean {
+    let aux: number = this.album_songs.length;
+    this.album_songs.pop();
+    return(aux != this.album_songs.length);
   }
 }

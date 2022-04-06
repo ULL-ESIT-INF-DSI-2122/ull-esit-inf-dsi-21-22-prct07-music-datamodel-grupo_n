@@ -15,7 +15,7 @@ export class Song {
    * @param single flag para saber si ha salido como single o no
    * @param repro numero de reproducciones de la cancion
    */
-  constructor(protected name: string, protected autor: Group|Artist, 
+  constructor(protected name: string, protected author: Group|Artist, 
     protected duration: number, protected gender: MusicGender[], 
     protected single: boolean, protected repro: number){
   }
@@ -32,8 +32,8 @@ export class Song {
    * Retorna el artista o grupo autor de la cancion
    * @returns autor
    */
-  getAutor(): Group|Artist {
-    return this.autor;
+  getAuthor(): Group|Artist {
+    return this.author;
   }
 
   /**
@@ -80,8 +80,8 @@ export class Song {
    * Modifica el valor del autor por otro autor
    * @param new_autor nuevo autor
    */
-  setAutor(new_autor: Group|Artist) {
-    this.autor = new_autor;
+  setAuthor(new_autor: Group|Artist) {
+    this.author = new_autor;
   }
 
   /**

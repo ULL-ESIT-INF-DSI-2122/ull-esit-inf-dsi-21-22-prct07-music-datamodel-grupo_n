@@ -36,20 +36,20 @@ export class Group {
   }
 
   /**
-   * Retorna el año de salida del grupo
+   * Retorna los generos del grupo
    * @returns 
    */
-  //getDeparture(): number {
-  //  return this.departure;
-  //}
+  getGender(): MusicGender[] {
+   return this.genders;
+  }
 
   /**
    * Retorna los albumes del grupo
    * @returns Album[]
    */
-  //getAlbums(): Album[] {
-  //  return this.albums;
-  //}
+  getAlbums(): Album[] {
+   return this.albums;
+  }
 
   /**
    * Retorna los oyentes mensuales del grupo
@@ -75,21 +75,21 @@ export class Group {
     this.band = new_band;
   }
 
-  // /**
-  //  * Modifica el año de creacion del grupo
-  //  * @param new_year nuevo año
-  //  */
-  // setDeparture(new_year: number) {
-  //   this.departure = new_year;
-  // }
+  /**
+   * Modifica el año de creacion del grupo
+   * @param new_year nuevo año
+   */
+  setGender(new_gender: MusicGender[]) {
+    this.genders = new_gender;
+  }
 
-  // /**
-  //  * Modifica los albunes del grupo
-  //  * @param new_albums nueva coleccion de albunes
-  //  */
-  // setAlbums(new_albums: Album[]) {
-  //   this.albums = new_albums;
-  // }
+  /**
+   * Modifica los albunes del grupo
+   * @param new_albums nueva coleccion de albunes
+   */
+  setAlbums(new_albums: Album[]) {
+    this.albums = new_albums;
+  }
 
   /**
    * Modifica la media de oyentes mensual
@@ -115,11 +115,23 @@ export class Group {
     this.genders.push(new_gender);
   }
 
-  // /**
-  //  * Añade un album a la colection del grupo
-  //  * @param new_album nuevo album
-  //  */
-  // addAlbum(new_album: Album) {
-  //   this.albums.push(new_album);
-  // }
+  /**
+   * Añade un album a la colection del grupo
+   * @param new_album nuevo album
+   */
+  addAlbum(new_album: Album): boolean {
+    let aux = this.albums.length;
+    this.albums.push(new_album);
+    return(aux != this.albums.length)
+  }
+
+  /**
+   * Elimina el ultimo elemto del array de albums
+   * @returns boolean
+   */
+  deleteLastAlbum(): boolean {
+    let aux = this.albums.length;
+    this.albums.pop();
+    return(aux != this.albums.length)
+  }
 }
