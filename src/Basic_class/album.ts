@@ -1,5 +1,12 @@
-import { MusicGender } from './music_gender';
-import { Song } from './song';
+import { MusicGender, MusicGenderInterface } from './music_gender';
+import { Song, SongInterface} from './song';
+
+export interface AlbumInterface {
+  name: string,
+  year: number, 
+  gender: MusicGenderInterface[],
+  song: SongInterface[]
+}
 
 /**
  * Clase que contiene y modifica lso atributos que tiene un album de musica
@@ -20,7 +27,7 @@ export class Album {
    * Retorna el nombre del Album
    * @returns string
    */
-  getName(): string {
+  public getName(): string {
     return this.name;
   }
 
@@ -28,14 +35,14 @@ export class Album {
    * Retorna el año de publicaciond el album
    * @returns number
    */
-  getYear(): number{
+  public getYear(): number{
     return this.year;
   }
   /**
    * Retorna los generos a los que pertenece al album
    * @returns MusicGender[]
    */
-  getGender(): MusicGender[] {
+  public getGender(): MusicGender[] {
     return this.genders;
   }
 
@@ -43,7 +50,7 @@ export class Album {
    * Retorna las consiones que componene el album
    * @returns Song[] 
    */
-  getAlbumSongs(): Song[] {
+  public getAlbumSongs(): Song[] {
     return this.album_songs;
   }
 

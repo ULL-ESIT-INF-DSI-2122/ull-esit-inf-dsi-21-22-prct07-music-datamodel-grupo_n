@@ -1,6 +1,13 @@
-import { Song } from "./song";
-import { MusicGender } from "./music_gender";
+import { Song, SongInterface } from "./song";
+import { MusicGender, MusicGenderInterface } from "./music_gender";
 
+
+export interface PlaylistInterface{
+  name: string,
+  songs: SongInterface[],
+  duration: number,
+  genders: MusicGenderInterface[]
+}
 /**
  * Clase que representa a una playlist
  */
@@ -20,7 +27,7 @@ export class Playlist {
    * Getter del atributo name
    * @returns Nombre 
    */
-  getName() : string {
+  public getName() : string {
     return this.name;
   }
 
@@ -28,7 +35,7 @@ export class Playlist {
    * Getter del atributo songs
    * @returns Canciones incluidas
    */
-  getSongs() : Song[] {
+  public getSongs() : Song[] {
     return this.songs;
   }
 
@@ -36,7 +43,7 @@ export class Playlist {
    * Getter del atributo duration
    * @returns Duración en segundos
    */
-  getDuration() : number {
+  public getDuration() : number {
     return this.duration;
   }
 
@@ -44,7 +51,7 @@ export class Playlist {
    * Getter del atributo genders
    * @returns Generos dentro de la playlist
    */
-  getGenders() : MusicGender[] {
+  public getGenders() : MusicGender[] {
     return this.genders;
   }
 

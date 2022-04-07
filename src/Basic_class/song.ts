@@ -1,7 +1,16 @@
-import { MusicGender } from "./music_gender";
-import { Artist } from "./artist";
-import { Group } from "./group";
+import { MusicGender, MusicGenderInterface } from "./music_gender";
+import { Artist, ArtistInterface } from "./artist";
+import { Group, GroupInterface } from "./group";
 
+
+export interface SongInterface{
+  name: string,
+  author: GroupInterface|ArtistInterface,
+  duration: number,
+  gender: MusicGenderInterface[],
+  single: boolean,
+  repro: number
+}
 /**
  * Clase que representa una cancion
  */
@@ -24,7 +33,7 @@ export class Song {
    * Retorna el nombre de la cancion
    * @returns name
    */
-  getName(): string{
+  public getName(): string{
     return this.name;
   }
 
@@ -32,7 +41,7 @@ export class Song {
    * Retorna el artista o grupo autor de la cancion
    * @returns autor
    */
-  getAuthor(): Group|Artist {
+  public getAuthor(): Group|Artist {
     return this.author;
   }
 
@@ -40,7 +49,7 @@ export class Song {
    * Retorna la duracion de la cancion
    * @returns duration
    */
-  getDuration(): number{
+  public getDuration(): number{
     return this.duration;
   }
 
@@ -48,7 +57,7 @@ export class Song {
    * Retorna el genero/generos musical/musicales de la cancion
    * @returns gender
    */
-  getGenders(): MusicGender[]{
+  public getGenders(): MusicGender[]{
     return this.gender;
   }
 
@@ -56,7 +65,7 @@ export class Song {
    * Retorna si la cancion fue lanzada como un single o no
    * @returns single
    */
-  getSingle(): boolean{
+  public getSingle(): boolean{
     return this.single;
   }
 
@@ -64,7 +73,7 @@ export class Song {
    * Retorna el numero de reproducciones
    * @returns repro
    */ 
-  getRepro(): number{
+  public getRepro(): number{
     return this.repro;
   }
 
@@ -139,5 +148,9 @@ export class Song {
       }
     });
     return(aux != this.gender.length);
+  }
+
+  public static deserialize(song: SongInterface): Song {
+    return new Song(song.name, song.author, song.duration, song.gender, song.single, song.repro);
   }
 }

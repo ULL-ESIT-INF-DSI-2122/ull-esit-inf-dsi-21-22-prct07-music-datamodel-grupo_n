@@ -1,6 +1,15 @@
-import { Album } from "./album";
-import { MusicGender } from "./music_gender";
-import { Artist } from "./artist";
+import { Album, AlbumInterface } from "./album";
+import { MusicGender, MusicGenderInterface} from "./music_gender";
+import { Artist, ArtistInterface } from "./artist";
+
+export interface GroupInterface {
+  name: string,
+  band: ArtistInterface,
+  gender: MusicGenderInterface[],
+  avg: number,
+  album: AlbumInterface[];
+
+}
 
 /**
  * Clase que configura y conforma un grupo musica
@@ -23,7 +32,7 @@ export class Group {
    * Retorna el nombre del grupo
    * @returns string
    */
-  getName(): string {
+  public getName(): string {
     return this.name;
   }
 
@@ -31,7 +40,7 @@ export class Group {
    * Retorna  los compoenntes del grupo
    * @returns Artist[]
    */
-  getBand(): Artist[] {
+  public getBand(): Artist[] {
     return this.band;
   }
 
@@ -39,7 +48,7 @@ export class Group {
    * Retorna los generos del grupo
    * @returns 
    */
-  getGender(): MusicGender[] {
+  public getGender(): MusicGender[] {
    return this.genders;
   }
 
@@ -47,7 +56,7 @@ export class Group {
    * Retorna los albumes del grupo
    * @returns Album[]
    */
-  getAlbums(): Album[] {
+  public getAlbums(): Album[] {
    return this.albums;
   }
 
@@ -55,7 +64,7 @@ export class Group {
    * Retorna los oyentes mensuales del grupo
    * @returns 
    */
-  getAvgMonthly(): number {
+  public getAvgMonthly(): number {
     return this.avg_monthly;
   }
 

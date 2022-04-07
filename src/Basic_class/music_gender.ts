@@ -1,4 +1,8 @@
 
+export interface MusicGenderInterface {
+  gender: string
+}
+
 /**
  * Clase que almacena y modifica los atributos que tiene un Genero musical.
  */
@@ -16,7 +20,7 @@ export class MusicGender {
    * Retorna el genero musical
    * @returns string
    */
-  getMusicGender(): string {
+  public getMusicGender(): string {
     return this.gender;
   }
 
