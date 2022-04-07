@@ -84,8 +84,20 @@ export class Playlist {
    * Añadir una nueva cancion a la lista de canciones
    * @param song nueva cancion a añadir
    */
-  addSong(song: Song) {
+  addSong(song: Song): boolean{
+    let aux: number = this.songs.length;
     this.songs.push(song);
+    return (aux != this.songs.length);
+  }
+
+  /**
+   * Elimina la última cancion añadida
+   * @returns boolean
+   */
+  deleteLastSong(): boolean {
+    let aux: number = this.songs.length;
+    this.songs.pop();
+    return (aux != this.songs.length);
   }
 
   /**
