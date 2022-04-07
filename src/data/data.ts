@@ -1,9 +1,9 @@
-import { MusicGender } from "./music_gender";
-import { Artist } from "./artist";
-import { Group } from "./group";
-import { Song } from './song';
-import { Album } from "./album";
-import { Playlist } from "./playlist";
+import { MusicGender } from "../Basic_class/music_gender";
+import { Artist } from "../Basic_class/artist";
+import { Group } from "../Basic_class/group";
+import { Song } from '../Basic_class/song';
+import { Album } from "../Basic_class/album";
+import { Playlist } from "../Basic_class/playlist";
 
 // Music Gender
 export let Heavy_Metal = new MusicGender('Heavy Metal');

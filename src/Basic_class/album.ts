@@ -1,5 +1,5 @@
-import { MusicGender } from "./music_gender";
-import { Song } from "./song";
+import { MusicGender } from './music_gender';
+import { Song } from './song';
 
 /**
  * Clase que contiene y modifica lso atributos que tiene un album de musica

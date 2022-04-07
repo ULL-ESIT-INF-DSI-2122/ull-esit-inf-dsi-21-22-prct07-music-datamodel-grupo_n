@@ -1,7 +1,7 @@
 import 'mocha';
 import { expect } from 'chai';
-import * as data from '../src/data';
-import { Playlist } from '../src/playlist';
+import * as data from '../../src/data/data';
+import { Playlist } from '../../src/Basic_class/playlist';
 
 describe('Comprobacion de la clase Playlist', () => {
   it('Los objetos declarados son de la clase Playlist', () => {

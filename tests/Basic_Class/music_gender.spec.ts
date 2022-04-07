@@ -1,7 +1,7 @@
 import 'mocha';
 import { expect } from 'chai';
-import { MusicGender } from '../src/music_gender';
-import * as data from '../src/data';
+import { MusicGender } from '../../src/Basic_class/music_gender';
+import * as data from '../../src/data/data';
 
 describe('Comprobación de la clase MusicGender', () => {
   it('Comprobamos que se puede instanciar el objeto', () => {

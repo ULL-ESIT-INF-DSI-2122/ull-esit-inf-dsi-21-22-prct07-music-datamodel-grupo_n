@@ -1,7 +1,7 @@
 import 'mocha';
 import { expect } from 'chai';
-import { Album } from '../src/album';
-import * as data from '../src/data';
+import { Album } from '../../src/Basic_class/album';
+import * as data from '../../src/data/data';
 
 describe("Comprobacion de la clase Album", () => {
   it("El objeto es instancia de la clase Album", () => {
