@@ -1,7 +1,7 @@
 import 'mocha';
 import { expect } from 'chai';
 import { Artist } from '../../src/Basic_class/artist';
-import * as data from '../../src/data/data';
+import * as data from '../../src/Data/data';
 
 describe('Comprobación de la clase Artist', () => {
   it('Comprobamos que se puede instanciar el objeto', () => {

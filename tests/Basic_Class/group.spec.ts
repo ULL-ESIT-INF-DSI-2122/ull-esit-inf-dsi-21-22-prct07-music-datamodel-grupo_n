@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { MusicGender } from '../../src/Basic_class/music_gender';
 import { Artist } from '../../src/Basic_class/artist';
 import { Group } from '../../src/Basic_class/group';
-import * as data from '../../src/data/data';
+import * as data from '../../src/Data/data';
 
 describe("Comprobación de la clase Group",() => {
   it("El objeto es instancia de la clase Group", () => {

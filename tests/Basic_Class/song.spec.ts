@@ -1,7 +1,7 @@
 import 'mocha';
 import { expect } from 'chai';
 import { Song } from '../../src/Basic_class/song';
-import * as data from '../../src/data/data';
+import * as data from '../../src/Data/data';
 
 
 describe('Comprobación de la clase Song', () => {
