@@ -82,8 +82,25 @@ export class Album {
    * Añade un Genero a los generos ya existentes
    * @param new_gender nuevo genero a agregar
    */
-  addGender(new_gender: MusicGender) {
+  addGender(new_gender: MusicGender): boolean {
+    let aux: number = this.genders.length;
     this.genders.push(new_gender);
+    return(aux != this.genders.length);
+  }
+
+  /**
+   * Elimina un genero musical de un album
+   * @param gender genero musical que se le da a la funcion para eliminar
+   * @returns boolean
+   */
+  deleteGender(gender: string): boolean {
+    let aux: number = this.genders.length;
+    this.genders.forEach((item, index) => {
+      if(item.getMusicGender() == gender) {
+        this.getGender().splice(index, 1);
+      }
+    });
+    return(aux != this.genders.length);
   }
 
   /**
@@ -98,11 +115,16 @@ export class Album {
 
   /**
    * Elimina la ultima cancion añadida
-   * @returns 
+   * @param song cancion a eliminar que se le pasa a la funcion
+   * @returns boolean
    */
-  deleteLastSong(): boolean {
+  deleteSong(song: string): boolean {
     let aux: number = this.album_songs.length;
-    this.album_songs.pop();
+    this.album_songs.forEach((item, index) => {
+      if(item.getName() == song) {
+        this.getAlbumSongs().splice(index, 1);
+      }
+    });
     return(aux != this.album_songs.length);
   }
 }

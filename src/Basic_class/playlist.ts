@@ -91,12 +91,16 @@ export class Playlist {
   }
 
   /**
-   * Elimina la última cancion añadida
+   * Elimina una cancion añadida
    * @returns boolean
    */
-  deleteLastSong(): boolean {
+  deleteSong(song: string): boolean {
     let aux: number = this.songs.length;
-    this.songs.pop();
+    this.songs.forEach((item, index) => {
+      if(item.getName() == song) {
+        this.getSongs().splice(index, 1);
+      }
+    });
     return (aux != this.songs.length);
   }
 
@@ -104,8 +108,24 @@ export class Playlist {
    * Añadir un nuevo genero al conjunto de generos
    * @param gender nuevo genero a añadir
    */
-  addGender(gender: MusicGender) {
+  addGender(gender: MusicGender): boolean {
+    let aux: number = this.genders.length;
     this.genders.push(gender);
+    return(aux != this.genders.length);
   }
 
+  /**
+   * Elimina un genero atribuido al artista
+   * @param gender genero a eliminar 
+   * @returns boolean
+   */
+   deleteGender(gender: string): boolean {
+    let aux: number = this.genders.length;
+    this.genders.forEach((item, index) => {
+      if(item.getMusicGender() == gender) {
+        this.getGenders().splice(index, 1);
+      }
+    });
+    return(aux != this.genders.length);
+  }
 }

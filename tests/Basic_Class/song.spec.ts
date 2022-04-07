@@ -26,34 +26,47 @@ describe('Comprobación de los atributos de la clase Song', () => {
     expect(data.La_bilirrubina.getName()).to.be.eql('La serotonina');
     data.La_bilirrubina.setName('La bilirrubina');
   });
+
   it('Comprobamos que podemos acceder y modificar el atributo author', () => {
     expect(data.haberlo_pensado_antes.getAuthor()).to.be.eql(data.Locoplaya);
     data.haberlo_pensado_antes.setAuthor(data.Juan_Luis_war);
     expect(data.haberlo_pensado_antes.getAuthor()).to.be.eql(data.Juan_Luis_war);
     data.haberlo_pensado_antes.setAuthor(data.Locoplaya);
   });
+
   it('Comprobamos que podemos acceder y modificar el atributo duration', () => {
     expect(data.Grenade.getDuration()).to.be.eql(204);
     data.Grenade.setDuration(20000);
     expect(data.Grenade.getDuration()).to.be.eql(20000);
     data.Grenade.setDuration(204);
   });
+
   it('Comprobamos que podemos acceder y modificar el atributo gender', () => {
     expect(data.lone_digger.getGenders()).to.be.eql([data.Electro_Swing]);
     data.lone_digger.setGenders([data.Rock_Esp]);
     expect(data.lone_digger.getGenders()).to.be.eql([data.Rock_Esp]);
     data.lone_digger.setGenders([data.Electro_Swing]);
   });
+
   it('Comprobamos que podemos acceder y modificar el atributo single', () => {
     expect(data.Soldadito_marinero.getSingle()).to.be.eql(true);
     data.Soldadito_marinero.setSingle(false);
     expect(data.Soldadito_marinero.getSingle()).to.be.eql(false);
     data.Soldadito_marinero.setSingle(true);
   });
+
   it('Comprobamos que podemos acceder y modificar el atributo repro', () => {
     expect(data.crazy.getRepro()).to.be.eql(12553334);
     data.crazy.setRepro(80);
     expect(data.crazy.getRepro()).to.be.eql(80);
     data.crazy.setRepro(12553334);
+  });
+
+  it('Añadimos una genero musical a la cancion', () => {
+    expect(data.Treasure.addGender(data.Heavy_Metal)).to.be.true;
+  });
+
+  it('Eliminamos un genero musical de una cancion', () => {
+    expect(data.Treasure.deleteGender("Heavy Metal")).to.be.true;
   });
 });

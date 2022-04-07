@@ -86,7 +86,7 @@ export class Artist {
   setAvg_Monthly(new_avg: number){
     this.avg_monthly = new_avg;
   }
-
+  
   /**
    * Modifica los albumes
    * @param new_albums 
@@ -96,6 +96,33 @@ export class Artist {
   }
 
   /**
+   * Añade un Genero a los generos ya existentes
+   * @param new_gender nuevo genero a agregar
+   */
+  addGender(new_gender: MusicGender): boolean {
+    let aux = this.genders.length;
+    this.genders.push(new_gender);
+    return(aux != this.genders.length);
+
+  }
+  
+  /**
+   * Elimina un genero atribuido al artista
+   * @param gender genero a eliminar 
+   * @returns boolean
+   */
+  deleteGender(gender: string): boolean {
+    let aux: number = this.genders.length;
+    this.genders.forEach((item, index) => {
+      if(item.getMusicGender() == gender) {
+        this.getGenders().splice(index, 1);
+      }
+    });
+    return(aux != this.genders.length);
+  }
+
+
+  /**
    * Añade un nuevo album
    * @param album nuevo album a añadir
    * @returns booleano que indica si se añadió correctamente
@@ -103,7 +130,6 @@ export class Artist {
   addAlbum(album: Album): boolean {
     let aux = this.albums.length;
     this.albums.push(album);
-    
     return(aux != this.albums.length)
   }
 
@@ -111,10 +137,13 @@ export class Artist {
    * Elimina el ultimo elemento insertado
    * @returns booleano que indica si se eliminó correctamente
    */
-  deleteLastAlbum() : boolean {
+  deleteAlbum(album: string) : boolean {
     let aux = this.albums.length;
-    this.albums.pop();
-    
+    this.albums.forEach((item, index) => {
+      if(item.getName() == album) {
+        this.getAlbum().splice(index, 1);
+      }
+    });
     return(aux != this.albums.length)
   }
 

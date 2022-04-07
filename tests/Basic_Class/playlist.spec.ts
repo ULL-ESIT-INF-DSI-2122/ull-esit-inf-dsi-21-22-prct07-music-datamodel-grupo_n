@@ -41,13 +41,15 @@ describe('Comprobacion de los atributos de Playlist', () => {
     expect(data.Heavy_ESP.addSong(data.vacaciones_pagadas)).to.be.true;
   });
 
-  it('Eliminar la ultima cancion añadida a la lista', () => {
-    expect(data.Heavy_ESP.deleteLastSong()).to.be.true;
+  it('Eliminar una cancion añadida a la lista', () => {
+    expect(data.Heavy_ESP.deleteSong('Vacaciones Pagadas')).to.be.true;
   });
 
   it('Añadir generos a la lista', () => {
-    data.K_Electro.addGender(data.RyB);
-    expect(data.K_Electro.getGenders()).to.be.eql([data.Electro_Swing, data.Kpop, data.RyB])
-    data.K_Electro.setGenders([data.Electro_Swing, data.Kpop]);
+    expect(data.K_Electro.addGender(data.RyB)).to.be.true;
+  });
+
+  it('Eliminar generos de la lista', () => {
+    expect(data.K_Electro.deleteGender('R&B')).to.be.true;
   });
 });

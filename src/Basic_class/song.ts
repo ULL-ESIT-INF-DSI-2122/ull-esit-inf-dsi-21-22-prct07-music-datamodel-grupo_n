@@ -116,4 +116,28 @@ export class Song {
     this.repro = new_repro;
   }
 
+  /**
+   * Añadir un nuevo genero al conjunto de generos
+   * @param gender nuevo genero a añadir
+   */
+   addGender(gender: MusicGender): boolean {
+    let aux: number = this.gender.length;
+    this.gender.push(gender);
+    return(aux != this.gender.length);
+  }
+
+  /**
+   * Elimina un genero atribuido al artista
+   * @param gender genero a eliminar 
+   * @returns boolean
+   */
+   deleteGender(gender: string): boolean {
+    let aux: number = this.gender.length;
+    this.gender.forEach((item, index) => {
+      if(item.getMusicGender() == gender) {
+        this.getGenders().splice(index, 1);
+      }
+    });
+    return(aux != this.gender.length);
+  }
 }

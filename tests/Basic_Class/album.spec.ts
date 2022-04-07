@@ -44,16 +44,18 @@ describe("Comprobacion de los atributos de Album", () => {
   });
 
   it("Añadir generos musical al album", () => {
-    data.Chronologic.addGender(data.Rock_Esp);
-    expect(data.Chronologic.getGender()).to.be.eql([data.Electro_Swing, data.Rock_Esp]);
-    data.Chronologic.getGender().pop();
+    expect(data.Chronologic.addGender(data.Rock_Esp)).to.be.true;
+  });
+
+  it("Eliminar Genero del album", () => {
+    expect(data.Chronologic.deleteGender('Rock Español')).to.be.true;
   });
 
   it("Añadir canciones al album", () => {
-    expect(data.Undertale_Soundtrack.addSong(data.Montero)).to.be.eql(true);
+    expect(data.Undertale_Soundtrack.addSong(data.Montero)).to.be.true;
   });
 
-  it("Eliminar la ultima cancion añadida al album", () => {
-    expect(data.Undertale_Soundtrack.deleteLastSong()).to.be.eql(true);
+  it("Eliminar una cancion de un album", () => {
+    expect(data.Undertale_Soundtrack.deleteSong('Montero')).to.be.true;
   });
 });

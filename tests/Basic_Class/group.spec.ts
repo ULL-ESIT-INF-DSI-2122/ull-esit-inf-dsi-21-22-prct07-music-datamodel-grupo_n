@@ -1,6 +1,5 @@
 import 'mocha';
 import { expect } from 'chai';
-import { MusicGender } from '../../src/Basic_class/music_gender';
 import { Artist } from '../../src/Basic_class/artist';
 import { Group } from '../../src/Basic_class/group';
 import * as data from '../../src/Data/data';
@@ -47,24 +46,26 @@ describe("Comprobación de lso atributos de la clase Group", () => {
   });
 
   it("Añadir artista al grupo", () => {
-    let aux: Artist[] = [data.Fito, data.Javier_Azola, data.Jose_Bruno];
-    aux.push(data.Ricardo_Cantera);
-    data.Fito_y_Fitipaldis.addArtist(data.Ricardo_Cantera);
-    expect(data.Fito_y_Fitipaldis.getBand()).to.be.eql(aux);
+    expect(data.Fito_y_Fitipaldis.addArtist(data.David_Draiman)).to.be.true;
+  });
+
+  it("Eliminar artista de un grupo", () => {
+    expect(data.Fito_y_Fitipaldis.deleteArtist("David Draiman")).to.be.true;
   });
 
   it("Añadir genero al grupo", () => {
-    let aux: MusicGender[] = [data.Kpop, data.Blues];
-    data.MAMAMOO.addGender(data.Blues);
-    expect(data.MAMAMOO.getGender()).to.be.eql(aux);
+    expect(data.MAMAMOO.addGender(data.Blues)).to.be.true;
+  });
+
+  it("Eliminar un genero al grupo", () => {
+    expect(data.MAMAMOO.deleteGender('Blues')).to.be.true;
   });
 
   it("Añadir album de a grupo", () => {
-    expect(data.Locoplaya.addAlbum(data.Asylum)).to.be.eql(true);
+    expect(data.Locoplaya.addAlbum(data.Asylum)).to.be.true;
   });
 
   it("Eliminar album de un grupo", () => {
-    expect(data.Locoplaya.deleteLastAlbum()).to.be.eql(true);
+    expect(data.Locoplaya.deleteAlbum("Asylum")).to.be.true;
   });
-
 });

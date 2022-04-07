@@ -103,35 +103,75 @@ export class Group {
    * Añade artistas al grupo
    * @param new_artist nuevo integracion del grupo
    */
-  addArtist(new_artist: Artist) {
+  addArtist(new_artist: Artist): boolean {
+    let aux = this.band.length;
     this.band.push(new_artist);
+    return(aux != this.band.length);
   }
 
   /**
-   * Añade un nuevo genero al grupo 
-   * @param new_gender nuevo genero
+   * Elimina un artista en concreto del drupo musical
+   * @param artist artista a eliminar
+   * @returns boolean
    */
-  addGender(new_gender: MusicGender) {
+  deleteArtist(artist: string): boolean {
+    let aux = this.band.length;
+    this.band.forEach((item, index) => {
+      if(item.getName() == artist) {
+        this.getBand().splice(index, 1);
+      }
+    });
+    return(aux != this.band.length);
+  }
+
+  /**
+   * Añade un Genero a los generos ya existentes
+   * @param new_gender nuevo genero a agregar
+   */
+   addGender(new_gender: MusicGender): boolean {
+    let aux = this.genders.length;
     this.genders.push(new_gender);
+    return(aux != this.genders.length);
+  }
+  
+  /**
+   * Elimina un genero atribuido al artista
+   * @param gender genero a eliminar 
+   * @returns boolean
+   */
+  deleteGender(gender: string): boolean {
+    let aux: number = this.genders.length;
+    this.genders.forEach((item, index) => {
+      if(item.getMusicGender() == gender) {
+        this.getGender().splice(index, 1);
+      }
+    });
+    return(aux != this.genders.length);
   }
 
+
   /**
-   * Añade un album a la colection del grupo
-   * @param new_album nuevo album
+   * Añade un nuevo album
+   * @param album nuevo album a añadir
+   * @returns booleano que indica si se añadió correctamente
    */
-  addAlbum(new_album: Album): boolean {
+  addAlbum(album: Album): boolean {
     let aux = this.albums.length;
-    this.albums.push(new_album);
+    this.albums.push(album);
     return(aux != this.albums.length)
   }
 
   /**
-   * Elimina el ultimo elemto del array de albums
-   * @returns boolean
+   * Elimina el ultimo elemento insertado
+   * @returns booleano que indica si se eliminó correctamente
    */
-  deleteLastAlbum(): boolean {
+  deleteAlbum(album: string) : boolean {
     let aux = this.albums.length;
-    this.albums.pop();
+    this.albums.forEach((item, index) => {
+      if(item.getName() == album) {
+        this.getAlbums().splice(index, 1);
+      }
+    });
     return(aux != this.albums.length)
   }
 }

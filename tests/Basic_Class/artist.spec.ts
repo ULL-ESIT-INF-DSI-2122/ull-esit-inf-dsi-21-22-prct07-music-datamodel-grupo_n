@@ -104,8 +104,14 @@ describe('Comprobación de los atributos de la clase Artist', () => {
     expect(data.Toby_fox.getAlbum()).to.be.eql([data.Tribute_to_uncle_Ray]);
     data.Toby_fox.setAlbum([data.Undertale_Soundtrack]);
   });
+
+  it('Comprobamos que podemos añadir y eliminar generos', () => {
+    expect(data.Toby_fox.addGender(data.Pop)).to.be.true;
+    expect(data.Toby_fox.deleteGender('Pop')).to.be.true;
+  });
+  
   it('Comprobamos que podemos añadir y eliminar albumes', () => {
-    expect(data.Juan_Luis_war.addAlbum(data.Chronologic)).to.be.eql(true);
-    expect(data.Juan_Luis_war.deleteLastAlbum()).to.be.eql(true);
+    expect(data.Juan_Luis_war.addAlbum(data.Chronologic)).to.be.true;
+    expect(data.Juan_Luis_war.deleteAlbum("Chronologic")).to.be.true;
   }); 
 });

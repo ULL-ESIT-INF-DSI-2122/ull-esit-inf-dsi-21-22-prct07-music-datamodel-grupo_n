@@ -1,7 +1,3 @@
-import { Artist } from "./artist";
-// import { Album } from "./album";
-// import { Song } from "./song";
-import { Group } from "./group";
 
 /**
  * Clase que almacena y modifica los atributos que tiene un Genero musical.
