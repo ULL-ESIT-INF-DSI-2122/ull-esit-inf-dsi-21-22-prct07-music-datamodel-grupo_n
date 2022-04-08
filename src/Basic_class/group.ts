@@ -141,13 +141,19 @@ export class Group {
     return(aux != this.genders.length);
   }
 
- public static deserialize(group: GroupInterface): Group {
-    let aux_g: MusicGender[] = [];
-    group.gender.forEach((item) => {aux_g.push(new MusicGender(item.gender))});
-
-    let aux_band: Artist[] = [];
-    group.band.forEach((item) =>{aux_band.push(new Artist(item.name, aux_g, item.avg))});
+  public static deserialize(group: GroupInterface[]): Group[] {
+    let aux_array: Group[] = [];
     
-    return new Group(group.name, aux_band, aux_g, group.avg);
- }
+    group.forEach((element) => {
+      let aux_g: MusicGender[] = [];
+      element.gender.forEach((item) => {aux_g.push(new MusicGender(item.gender))});
+  
+      let aux_band: Artist[] = [];
+      element.band.forEach((item) =>{aux_band.push(new Artist(item.name, aux_g, item.avg))});
+      
+      aux_array.push(new Group(element.name, aux_band, aux_g, element.avg));
+    });
+
+    return aux_array;
+  }
 }

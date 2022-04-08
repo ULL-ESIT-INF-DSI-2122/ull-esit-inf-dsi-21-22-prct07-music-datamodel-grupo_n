@@ -137,21 +137,28 @@ export class Album {
     return(aux != this.album_songs.length);
   }
 
-  public static deserialize(album: AlbumInterface): Album {
-    let aux_g: MusicGender[] = [];
-    album.gender.forEach((item) => {aux_g.push(new MusicGender(item.gender))});
-    let aux_s: Song[] = [];
-    album.song.forEach((item) => {
-      if('band' in item.author) {
-        let aux_band: Artist[] = [];
-        item.author.band.forEach((item) => {aux_band.push(new Artist(item.name, aux_g, item.avg))});
-        let aux_author: Group = new Group(item.author.name, aux_band, aux_g, item.author.avg);
-        aux_s.push(new Song(item.name, aux_author, item.duration, aux_g, item.single, item.repro));
-      } else {
-        let aux_author: Artist = new Artist(item.author.name, aux_g, item.author.avg);
-        aux_s.push(new Song(item.name, aux_author, item.duration, aux_g, item.single, item.repro));
-      }
+  public static deserialize(album: AlbumInterface[]): Album[] {
+    let aux_array: Album[] = [];
+
+    album.forEach((element) => {
+      let aux_g: MusicGender[] = [];
+      element.gender.forEach((item) => {aux_g.push(new MusicGender(item.gender))});
+      
+      let aux_s: Song[] = [];
+      element.song.forEach((item) => {
+        if('band' in item.author) {
+          let aux_band: Artist[] = [];
+          item.author.band.forEach((item) => {aux_band.push(new Artist(item.name, aux_g, item.avg))});
+          let aux_author: Group = new Group(item.author.name, aux_band, aux_g, item.author.avg);
+          aux_s.push(new Song(item.name, aux_author, item.duration, aux_g, item.single, item.repro));
+        } else {
+          let aux_author: Artist = new Artist(item.author.name, aux_g, item.author.avg);
+          aux_s.push(new Song(item.name, aux_author, item.duration, aux_g, item.single, item.repro));
+        }
+      });
+    aux_array.push(new Album(element.name, element.year, aux_g, aux_s));
     });
-    return new Album(album.name, album.year, aux_g, aux_s);
+
+    return aux_array;
   }
 }

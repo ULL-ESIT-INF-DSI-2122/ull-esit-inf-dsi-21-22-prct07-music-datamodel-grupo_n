@@ -25,12 +25,12 @@ export let John_Moyer = new Artist("John Moyer", [Heavy_Metal], 0);
 export let Mike_Wengren = new Artist('Mike Wengren', [Heavy_Metal], 112);
 export let Dan_Donegan = new Artist('Dan Donegan', [Heavy_Metal], 0);
 export let Steve_Wonder = new Artist('Steve Wonder', [Blues], 15327758);
-export let Lil_Nas_X = new Artist('Montero Lamar Hill', [RyB], 49522921);
+export let Lil_Nas_X = new Artist('Lil Nas X', [RyB], 49522921);
 export let Fito = new Artist('Fito Cabrales', [Rock_Esp], 0);
 export let Javier_Azola = new Artist('Javier Azola', [Rock_Esp], 0);
 export let Jose_Bruno = new Artist('Jose Bruno', [Rock_Esp], 0);
 export let Ricardo_Cantera = new Artist('Ricardo Cantera', [Rock_Esp], 0);
-export let Bruno_Mars = new Artist('Peter Gene Hernandez', [Pop], 52087795);
+export let Bruno_Mars = new Artist('Bruno Mars', [Pop], 52087795);
 export let Juan_Luis_war = new Artist('Juan Luis Guerra', [Bachata], 7220793);
 export let Zoe_Colotis = new Artist('Zoé Colotis', [Electro_Swing], 203);
 export let Arnaud_Vial = new Artist('Arnaud Vial', [Electro_Swing], 0);
@@ -136,15 +136,9 @@ export let All_Albums: Album[] = [Asylum, Nasarati, Tribute_to_uncle_Ray, Lo_mas
 
 //Playlist
 
-//Playlist de Heavy_Metal y Rock_ESP
 export let Heavy_ESP = new Playlist('Heavy & Fipaldis', [Down_with_the_sickness, Numb, Savior_of_nothig, Want, Stupify, Garabatos, La_casa_por_el_tejado, Me_equivocaria_otra_vez, Soldadito_marinero, Por_la_boca_vive_el_pez], 2434, [Heavy_Metal, Rock_Esp]);
-
-//Playlist de Ryb y Blues
 export let Ryblues = new Playlist('RyBlues',[Industry_Baby, Montero, Sun_Goes_Down, Old_Town_Road, Holiday, Smile, Sunset, Superstition, So_what_the_fuss, Frankye_and_Johnny], 2051, [RyB, Blues]);
-
-//Playlist Electro Swing y Kpop
 export let K_Electro = new Playlist('K-Electro', [wonderland, melancolia, miracle, lone_digger, plume, wind_flower, egotistic, hip, gogobebe, piano_man], 2078, [Electro_Swing, Kpop]);
-
-//Playlist Mix 
 export let Mix = new Playlist('Mix', [Treasure, Grenade, Just_the_way_you_are, Uptown_Funk, Smoking_out_the_window, Ojala_que_llueva_cafe, La_guagua, La_bilirrubina, Burbujas_de_amor, El_niagara_en_bicicleta, megalovania, his_theme, death_by_glamour, hopes_and_dreams, bonetrousle, haberlo_pensado_antes, vacaciones_pagadas, crazy, gigantes_o_molinos, el_paisaje], 3933, [Pop, Bachata, Ost, Rap])
 
+export let All_Playlist: Playlist[] = [Heavy_ESP, Ryblues, K_Electro, Mix];

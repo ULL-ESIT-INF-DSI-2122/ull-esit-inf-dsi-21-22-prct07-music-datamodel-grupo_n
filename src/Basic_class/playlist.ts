@@ -1,13 +1,16 @@
-import { Song/*, SongInterface */} from "./song";
-import { MusicGender/*, MusicGenderInterface */} from "./music_gender";
+import { Song, SongInterface } from "./song";
+import { MusicGender, MusicGenderInterface } from "./music_gender";
+import { Artist } from "./artist";
+import { Group } from "./group";
 
 
-// export interface PlaylistInterface{
-//   name: string,
-//   songs: SongInterface[],
-//   duration: number,
-//   genders: MusicGenderInterface[]
-// }
+export interface PlaylistInterface{
+  name: string,
+  songs: SongInterface[],
+  duration: number,
+  genders: MusicGenderInterface[]
+}
+
 /**
  * Clase que representa a una playlist
  */
@@ -134,5 +137,31 @@ export class Playlist {
       }
     });
     return(aux != this.genders.length);
+  }
+  
+  public static deserialize (playlist: PlaylistInterface[]): Playlist[] {
+    let aux_array: Playlist[] = [];
+
+    playlist.forEach((element) => {
+      let aux_g: MusicGender[] = [];
+      element.genders.forEach((item) => {aux_g.push(new MusicGender(item.gender))});
+  
+      let aux_s: Song[] = [];
+      element.songs.forEach((item) => {
+        if('band' in item.author) {
+          let aux_band: Artist[] = [];
+          item.author.band.forEach((item) => {aux_band.push(new Artist(item.name, aux_g, item.avg))});
+          let aux_author: Group = new Group(item.author.name, aux_band, aux_g, item.author.avg);
+          aux_s.push(new Song(item.name, aux_author, item.duration, aux_g, item.single, item.repro));
+        } else {
+          let aux_author: Artist = new Artist(item.author.name, aux_g, item.author.avg);
+          aux_s.push(new Song(item.name, aux_author, item.duration, aux_g, item.single, item.repro));
+        }
+      });
+      
+      aux_array.push(new Playlist(element.name, aux_s, element.duration, aux_g));
+    });
+    
+    return aux_array;
   }
 }

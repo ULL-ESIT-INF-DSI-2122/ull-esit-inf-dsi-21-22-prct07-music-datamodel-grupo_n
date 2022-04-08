@@ -32,7 +32,11 @@ export class MusicGender {
     this.gender = new_gender;
   }
 
-  public static deserialize(music_gender: MusicGenderInterface): MusicGender {
-    return new MusicGender(music_gender.gender);
+  public static deserialize(music_gender: MusicGenderInterface[]): MusicGender[] {
+    let aux_array: MusicGender[] = [];
+    music_gender.forEach((element) => {
+      aux_array.push(new MusicGender(element.gender));
+    });
+    return aux_array;
   }
 }

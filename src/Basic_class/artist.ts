@@ -113,11 +113,16 @@ export class Artist {
     return(aux != this.genders.length);
   }
 
-  public static deserialize (artist: ArtistInterface): Artist {
-    let aux_g: MusicGender[] = [];
-    artist.gender.forEach((item) => {aux_g.push(new MusicGender(item.gender))});
+  public static deserialize (artist: ArtistInterface[]): Artist[] {
+    let aux_array: Artist[] = [];
 
-    return new Artist(artist.name, aux_g, artist.avg);
+    artist.forEach((element) => {
+      let aux_g: MusicGender[] = [];
+      element.gender.forEach((item) => {aux_g.push(new MusicGender(item.gender))});
+
+      aux_array.push(new Artist(element.name, aux_g, element.avg));
+    });
+    return aux_array;
   }
 
 }

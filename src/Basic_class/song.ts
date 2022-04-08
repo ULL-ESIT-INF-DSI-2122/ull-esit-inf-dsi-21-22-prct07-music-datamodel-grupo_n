@@ -150,19 +150,25 @@ export class Song {
     return(aux != this.gender.length);
   }
 
-  public static deserialize(song: SongInterface): Song {
-    let aux_g: MusicGender[] = [];
-    song.gender.forEach((item) => {aux_g.push(new MusicGender(item.gender))});
+  public static deserialize(song: SongInterface[]): Song[] {
+    let aux_array: Song[] = [];
 
-    if('band' in song.author) { 
-      let aux_band: Artist[] = [];
-      song.author.band.forEach((item) => {aux_band.push(new Artist(item.name, aux_g, item.avg))});
-      let aux_author: Group = new Group(song.author.name, aux_band, aux_g, song.author.avg);
-      return new Song(song.name, aux_author, song.duration, aux_g, song.single, song.repro);
-      
-    } else {
-      let aux_author: Artist = new Artist(song.author.name, aux_g, song.author.avg);
-      return new Song(song.name, aux_author, song.duration, aux_g, song.single, song.repro);
-    }
+    song.forEach((element) => {
+      let aux_g: MusicGender[] = [];
+      element.gender.forEach((item) => {aux_g.push(new MusicGender(item.gender))});
+
+      if('band' in element.author) { 
+        let aux_band: Artist[] = [];
+        element.author.band.forEach((item) => {aux_band.push(new Artist(item.name, aux_g, item.avg))});
+        let aux_author: Group = new Group(element.author.name, aux_band, aux_g, element.author.avg);
+        aux_array.push(new Song(element.name, aux_author, element.duration, aux_g, element.single, element.repro));
+        
+      } else {
+        let aux_author: Artist = new Artist(element.author.name, aux_g, element.author.avg);
+        aux_array.push(new Song(element.name, aux_author, element.duration, aux_g, element.single, element.repro));
+      }
+    });
+
+    return aux_array;
   }
 }

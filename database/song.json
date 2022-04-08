@@ -1,0 +1,1864 @@
+{
+  "song": [
+    {
+      "name": "Down With The Sickness",
+      "author": {
+        "name": "Disturbed",
+        "band": [
+          {
+            "name": "David Draiman",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 539048
+          },
+          {
+            "name": "John Moyer",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Mike Wengren",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 112
+          },
+          {
+            "name": "Dan Donegan",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 0
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Heavy Metal"
+          }
+        ],
+        "avg_monthly": 8850577
+      },
+      "duration": 263,
+      "gender": [
+        {
+          "gender": "Heavy Metal"
+        }
+      ],
+      "single": false,
+      "repro": 516338655
+    },
+    {
+      "name": "Numb",
+      "author": {
+        "name": "Disturbed",
+        "band": [
+          {
+            "name": "David Draiman",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 539048
+          },
+          {
+            "name": "John Moyer",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Mike Wengren",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 112
+          },
+          {
+            "name": "Dan Donegan",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 0
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Heavy Metal"
+          }
+        ],
+        "avg_monthly": 8850577
+      },
+      "duration": 207,
+      "gender": [
+        {
+          "gender": "Heavy Metal"
+        }
+      ],
+      "single": false,
+      "repro": 1640851
+    },
+    {
+      "name": "Savior Of Nothing",
+      "author": {
+        "name": "Disturbed",
+        "band": [
+          {
+            "name": "David Draiman",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 539048
+          },
+          {
+            "name": "John Moyer",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Mike Wengren",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 112
+          },
+          {
+            "name": "Dan Donegan",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 0
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Heavy Metal"
+          }
+        ],
+        "avg_monthly": 8850577
+      },
+      "duration": 247,
+      "gender": [
+        {
+          "gender": "Heavy Metal"
+        }
+      ],
+      "single": false,
+      "repro": 2308077
+    },
+    {
+      "name": "Want",
+      "author": {
+        "name": "Disturbed",
+        "band": [
+          {
+            "name": "David Draiman",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 539048
+          },
+          {
+            "name": "John Moyer",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Mike Wengren",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 112
+          },
+          {
+            "name": "Dan Donegan",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 0
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Heavy Metal"
+          }
+        ],
+        "avg_monthly": 8850577
+      },
+      "duration": 195,
+      "gender": [
+        {
+          "gender": "Heavy Metal"
+        }
+      ],
+      "single": false,
+      "repro": 7256401
+    },
+    {
+      "name": "Stupify",
+      "author": {
+        "name": "Disturbed",
+        "band": [
+          {
+            "name": "David Draiman",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 539048
+          },
+          {
+            "name": "John Moyer",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Mike Wengren",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 112
+          },
+          {
+            "name": "Dan Donegan",
+            "genders": [
+              {
+                "gender": "Heavy Metal"
+              }
+            ],
+            "avg_monthly": 0
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Heavy Metal"
+          }
+        ],
+        "avg_monthly": 8850577
+      },
+      "duration": 243,
+      "gender": [
+        {
+          "gender": "Heavy Metal"
+        }
+      ],
+      "single": false,
+      "repro": 27122910
+    },
+    {
+      "name": "Industry Baby",
+      "author": {
+        "name": "Lil Nas X",
+        "genders": [
+          {
+            "gender": "R&B"
+          }
+        ],
+        "avg_monthly": 49522921
+      },
+      "duration": 213,
+      "gender": [
+        {
+          "gender": "R&B"
+        }
+      ],
+      "single": false,
+      "repro": 326199448
+    },
+    {
+      "name": "Montero",
+      "author": {
+        "name": "Lil Nas X",
+        "genders": [
+          {
+            "gender": "R&B"
+          }
+        ],
+        "avg_monthly": 49522921
+      },
+      "duration": 183,
+      "gender": [
+        {
+          "gender": "R&B"
+        }
+      ],
+      "single": false,
+      "repro": 452879557
+    },
+    {
+      "name": "Sun Goes Down",
+      "author": {
+        "name": "Lil Nas X",
+        "genders": [
+          {
+            "gender": "R&B"
+          }
+        ],
+        "avg_monthly": 49522921
+      },
+      "duration": 151,
+      "gender": [
+        {
+          "gender": "R&B"
+        }
+      ],
+      "single": false,
+      "repro": 39485162
+    },
+    {
+      "name": "Old Town Road",
+      "author": {
+        "name": "Lil Nas X",
+        "genders": [
+          {
+            "gender": "R&B"
+          }
+        ],
+        "avg_monthly": 49522921
+      },
+      "duration": 234,
+      "gender": [
+        {
+          "gender": "R&B"
+        }
+      ],
+      "single": false,
+      "repro": 631858029
+    },
+    {
+      "name": "Holiday",
+      "author": {
+        "name": "Lil Nas X",
+        "genders": [
+          {
+            "gender": "R&B"
+          }
+        ],
+        "avg_monthly": 49522921
+      },
+      "duration": 148,
+      "gender": [
+        {
+          "gender": "R&B"
+        }
+      ],
+      "single": false,
+      "repro": 209931052
+    },
+    {
+      "name": "Smile",
+      "author": {
+        "name": "Steve Wonder",
+        "genders": [
+          {
+            "gender": "Blues"
+          }
+        ],
+        "avg_monthly": 15327758
+      },
+      "duration": 192,
+      "gender": [
+        {
+          "gender": "Blues"
+        }
+      ],
+      "single": false,
+      "repro": 30600
+    },
+    {
+      "name": "Sunset",
+      "author": {
+        "name": "Steve Wonder",
+        "genders": [
+          {
+            "gender": "Blues"
+          }
+        ],
+        "avg_monthly": 15327758
+      },
+      "duration": 189,
+      "gender": [
+        {
+          "gender": "Blues"
+        }
+      ],
+      "single": false,
+      "repro": 54892
+    },
+    {
+      "name": "Superstition",
+      "author": {
+        "name": "Steve Wonder",
+        "genders": [
+          {
+            "gender": "Blues"
+          }
+        ],
+        "avg_monthly": 15327758
+      },
+      "duration": 255,
+      "gender": [
+        {
+          "gender": "Blues"
+        }
+      ],
+      "single": true,
+      "repro": 19757336
+    },
+    {
+      "name": "So What The Fuss",
+      "author": {
+        "name": "Steve Wonder",
+        "genders": [
+          {
+            "gender": "Blues"
+          }
+        ],
+        "avg_monthly": 15327758
+      },
+      "duration": 302,
+      "gender": [
+        {
+          "gender": "Blues"
+        }
+      ],
+      "single": true,
+      "repro": 113159
+    },
+    {
+      "name": "Frankye & Johnny",
+      "author": {
+        "name": "Steve Wonder",
+        "genders": [
+          {
+            "gender": "Blues"
+          }
+        ],
+        "avg_monthly": 15327758
+      },
+      "duration": 184,
+      "gender": [
+        {
+          "gender": "Blues"
+        }
+      ],
+      "single": false,
+      "repro": 16503
+    },
+    {
+      "name": "Garabatos",
+      "author": {
+        "name": "Fito y Fitipaldis",
+        "band": [
+          {
+            "name": "Fito Cabrales",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Javier Azola",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Jose Bruno",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Ricardo Cantera",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Rock Español"
+          }
+        ],
+        "avg_monthly": 2037838
+      },
+      "duration": 264,
+      "gender": [
+        {
+          "gender": "Rock Español"
+        }
+      ],
+      "single": false,
+      "repro": 7077525
+    },
+    {
+      "name": "La casa por el tejado",
+      "author": {
+        "name": "Fito y Fitipaldis",
+        "band": [
+          {
+            "name": "Fito Cabrales",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Javier Azola",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Jose Bruno",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Ricardo Cantera",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Rock Español"
+          }
+        ],
+        "avg_monthly": 2037838
+      },
+      "duration": 241,
+      "gender": [
+        {
+          "gender": "Rock Español"
+        }
+      ],
+      "single": false,
+      "repro": 23218193
+    },
+    {
+      "name": "Me equivocaria otra vez",
+      "author": {
+        "name": "Fito y Fitipaldis",
+        "band": [
+          {
+            "name": "Fito Cabrales",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Javier Azola",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Jose Bruno",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Ricardo Cantera",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Rock Español"
+          }
+        ],
+        "avg_monthly": 2037838
+      },
+      "duration": 301,
+      "gender": [
+        {
+          "gender": "Rock Español"
+        }
+      ],
+      "single": false,
+      "repro": 28197359
+    },
+    {
+      "name": "Por la boca vive el pez",
+      "author": {
+        "name": "Fito y Fitipaldis",
+        "band": [
+          {
+            "name": "Fito Cabrales",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Javier Azola",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Jose Bruno",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Ricardo Cantera",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Rock Español"
+          }
+        ],
+        "avg_monthly": 2037838
+      },
+      "duration": 258,
+      "gender": [
+        {
+          "gender": "Rock Español"
+        }
+      ],
+      "single": true,
+      "repro": 58744450
+    },
+    {
+      "name": "Soldadito marinero",
+      "author": {
+        "name": "Fito y Fitipaldis",
+        "band": [
+          {
+            "name": "Fito Cabrales",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Javier Azola",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Jose Bruno",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Ricardo Cantera",
+            "genders": [
+              {
+                "gender": "Rock Español"
+              }
+            ],
+            "avg_monthly": 0
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Rock Español"
+          }
+        ],
+        "avg_monthly": 2037838
+      },
+      "duration": 215,
+      "gender": [
+        {
+          "gender": "Rock Español"
+        }
+      ],
+      "single": true,
+      "repro": 57833321
+    },
+    {
+      "name": "Treasure",
+      "author": {
+        "name": "Bruno Mars",
+        "genders": [
+          {
+            "gender": "Pop"
+          }
+        ],
+        "avg_monthly": 52087795
+      },
+      "duration": 186,
+      "gender": [
+        {
+          "gender": "Pop"
+        }
+      ],
+      "single": true,
+      "repro": 637112893
+    },
+    {
+      "name": "Grenade",
+      "author": {
+        "name": "Bruno Mars",
+        "genders": [
+          {
+            "gender": "Pop"
+          }
+        ],
+        "avg_monthly": 52087795
+      },
+      "duration": 204,
+      "gender": [
+        {
+          "gender": "Pop"
+        }
+      ],
+      "single": true,
+      "repro": 1073534484
+    },
+    {
+      "name": "Just the way you are",
+      "author": {
+        "name": "Bruno Mars",
+        "genders": [
+          {
+            "gender": "Pop"
+          }
+        ],
+        "avg_monthly": 52087795
+      },
+      "duration": 213,
+      "gender": [
+        {
+          "gender": "Pop"
+        }
+      ],
+      "single": true,
+      "repro": 1704676116
+    },
+    {
+      "name": "Uptown Funk",
+      "author": {
+        "name": "Bruno Mars",
+        "genders": [
+          {
+            "gender": "Pop"
+          }
+        ],
+        "avg_monthly": 52087795
+      },
+      "duration": 258,
+      "gender": [
+        {
+          "gender": "Pop"
+        }
+      ],
+      "single": false,
+      "repro": 4515115221
+    },
+    {
+      "name": "Smoking out the window",
+      "author": {
+        "name": "Bruno Mars",
+        "genders": [
+          {
+            "gender": "Pop"
+          }
+        ],
+        "avg_monthly": 52087795
+      },
+      "duration": 192,
+      "gender": [
+        {
+          "gender": "Pop"
+        }
+      ],
+      "single": false,
+      "repro": 107032201
+    },
+    {
+      "name": "Ojala que llueva que cafe",
+      "author": {
+        "name": "Juan Luis Guerra",
+        "genders": [
+          {
+            "gender": "Bachata"
+          }
+        ],
+        "avg_monthly": 7220793
+      },
+      "duration": 247,
+      "gender": [
+        {
+          "gender": "Bachata"
+        }
+      ],
+      "single": false,
+      "repro": 1481024
+    },
+    {
+      "name": "La guagua",
+      "author": {
+        "name": "Juan Luis Guerra",
+        "genders": [
+          {
+            "gender": "Bachata"
+          }
+        ],
+        "avg_monthly": 7220793
+      },
+      "duration": 209,
+      "gender": [
+        {
+          "gender": "Bachata"
+        }
+      ],
+      "single": false,
+      "repro": 5160713
+    },
+    {
+      "name": "La bilirrubina",
+      "author": {
+        "name": "Juan Luis Guerra",
+        "genders": [
+          {
+            "gender": "Bachata"
+          }
+        ],
+        "avg_monthly": 7220793
+      },
+      "duration": 243,
+      "gender": [
+        {
+          "gender": "Bachata"
+        }
+      ],
+      "single": false,
+      "repro": 38323024
+    },
+    {
+      "name": "Burbujas de amor",
+      "author": {
+        "name": "Juan Luis Guerra",
+        "genders": [
+          {
+            "gender": "Bachata"
+          }
+        ],
+        "avg_monthly": 7220793
+      },
+      "duration": 246,
+      "gender": [
+        {
+          "gender": "Bachata"
+        }
+      ],
+      "single": false,
+      "repro": 85394327
+    },
+    {
+      "name": "El niagara en bicicleta",
+      "author": {
+        "name": "Juan Luis Guerra",
+        "genders": [
+          {
+            "gender": "Bachata"
+          }
+        ],
+        "avg_monthly": 7220793
+      },
+      "duration": 241,
+      "gender": [
+        {
+          "gender": "Bachata"
+        }
+      ],
+      "single": false,
+      "repro": 29704527
+    },
+    {
+      "name": "Wonderland",
+      "author": {
+        "name": "Caravan Palace",
+        "band": [
+          {
+            "name": "Zoé Colotis",
+            "genders": [
+              {
+                "gender": "Electro Swing"
+              }
+            ],
+            "avg_monthly": 203
+          },
+          {
+            "name": "Arnaud Vial",
+            "genders": [
+              {
+                "gender": "Electro Swing"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Hugues Payen",
+            "genders": [
+              {
+                "gender": "Electro Swing"
+              }
+            ],
+            "avg_monthly": 0
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Electro Swing"
+          }
+        ],
+        "avg_monthly": 1860398
+      },
+      "duration": 190,
+      "gender": [
+        {
+          "gender": "Electro Swing"
+        }
+      ],
+      "single": false,
+      "repro": 51994159
+    },
+    {
+      "name": "Melancolia",
+      "author": {
+        "name": "Caravan Palace",
+        "band": [
+          {
+            "name": "Zoé Colotis",
+            "genders": [
+              {
+                "gender": "Electro Swing"
+              }
+            ],
+            "avg_monthly": 203
+          },
+          {
+            "name": "Arnaud Vial",
+            "genders": [
+              {
+                "gender": "Electro Swing"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Hugues Payen",
+            "genders": [
+              {
+                "gender": "Electro Swing"
+              }
+            ],
+            "avg_monthly": 0
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Electro Swing"
+          }
+        ],
+        "avg_monthly": 1860398
+      },
+      "duration": 243,
+      "gender": [
+        {
+          "gender": "Electro Swing"
+        }
+      ],
+      "single": false,
+      "repro": 5000750
+    },
+    {
+      "name": "Miracle",
+      "author": {
+        "name": "Caravan Palace",
+        "band": [
+          {
+            "name": "Zoé Colotis",
+            "genders": [
+              {
+                "gender": "Electro Swing"
+              }
+            ],
+            "avg_monthly": 203
+          },
+          {
+            "name": "Arnaud Vial",
+            "genders": [
+              {
+                "gender": "Electro Swing"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Hugues Payen",
+            "genders": [
+              {
+                "gender": "Electro Swing"
+              }
+            ],
+            "avg_monthly": 0
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Electro Swing"
+          }
+        ],
+        "avg_monthly": 1860398
+      },
+      "duration": 216,
+      "gender": [
+        {
+          "gender": "Electro Swing"
+        }
+      ],
+      "single": false,
+      "repro": 28790283
+    },
+    {
+      "name": "Lone Digger",
+      "author": {
+        "name": "Caravan Palace",
+        "band": [
+          {
+            "name": "Zoé Colotis",
+            "genders": [
+              {
+                "gender": "Electro Swing"
+              }
+            ],
+            "avg_monthly": 203
+          },
+          {
+            "name": "Arnaud Vial",
+            "genders": [
+              {
+                "gender": "Electro Swing"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Hugues Payen",
+            "genders": [
+              {
+                "gender": "Electro Swing"
+              }
+            ],
+            "avg_monthly": 0
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Electro Swing"
+          }
+        ],
+        "avg_monthly": 1860398
+      },
+      "duration": 229,
+      "gender": [
+        {
+          "gender": "Electro Swing"
+        }
+      ],
+      "single": false,
+      "repro": 138620352
+    },
+    {
+      "name": "Plume",
+      "author": {
+        "name": "Caravan Palace",
+        "band": [
+          {
+            "name": "Zoé Colotis",
+            "genders": [
+              {
+                "gender": "Electro Swing"
+              }
+            ],
+            "avg_monthly": 203
+          },
+          {
+            "name": "Arnaud Vial",
+            "genders": [
+              {
+                "gender": "Electro Swing"
+              }
+            ],
+            "avg_monthly": 0
+          },
+          {
+            "name": "Hugues Payen",
+            "genders": [
+              {
+                "gender": "Electro Swing"
+              }
+            ],
+            "avg_monthly": 0
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Electro Swing"
+          }
+        ],
+        "avg_monthly": 1860398
+      },
+      "duration": 183,
+      "gender": [
+        {
+          "gender": "Electro Swing"
+        }
+      ],
+      "single": false,
+      "repro": 10622613
+    },
+    {
+      "name": "Wind Flower",
+      "author": {
+        "name": "MAMAMOO",
+        "band": [
+          {
+            "name": "Hwasa",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 2932958
+          },
+          {
+            "name": "Solar",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 1230828
+          },
+          {
+            "name": "Wheein",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 832909
+          },
+          {
+            "name": "Moonbyul",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 705790
+          }
+        ],
+        "genders": [
+          {
+            "gender": "K-Pop"
+          }
+        ],
+        "avg_monthly": 3111748
+      },
+      "duration": 236,
+      "gender": [
+        {
+          "gender": "K-Pop"
+        }
+      ],
+      "single": false,
+      "repro": 34723452
+    },
+    {
+      "name": "Piano Man",
+      "author": {
+        "name": "MAMAMOO",
+        "band": [
+          {
+            "name": "Hwasa",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 2932958
+          },
+          {
+            "name": "Solar",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 1230828
+          },
+          {
+            "name": "Wheein",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 832909
+          },
+          {
+            "name": "Moonbyul",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 705790
+          }
+        ],
+        "genders": [
+          {
+            "gender": "K-Pop"
+          }
+        ],
+        "avg_monthly": 3111748
+      },
+      "duration": 195,
+      "gender": [
+        {
+          "gender": "K-Pop"
+        }
+      ],
+      "single": true,
+      "repro": 10164869
+    },
+    {
+      "name": "Egotistic",
+      "author": {
+        "name": "MAMAMOO",
+        "band": [
+          {
+            "name": "Hwasa",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 2932958
+          },
+          {
+            "name": "Solar",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 1230828
+          },
+          {
+            "name": "Wheein",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 832909
+          },
+          {
+            "name": "Moonbyul",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 705790
+          }
+        ],
+        "genders": [
+          {
+            "gender": "K-Pop"
+          }
+        ],
+        "avg_monthly": 3111748
+      },
+      "duration": 196,
+      "gender": [
+        {
+          "gender": "K-Pop"
+        }
+      ],
+      "single": false,
+      "repro": 99981334
+    },
+    {
+      "name": "HIP",
+      "author": {
+        "name": "MAMAMOO",
+        "band": [
+          {
+            "name": "Hwasa",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 2932958
+          },
+          {
+            "name": "Solar",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 1230828
+          },
+          {
+            "name": "Wheein",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 832909
+          },
+          {
+            "name": "Moonbyul",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 705790
+          }
+        ],
+        "genders": [
+          {
+            "gender": "K-Pop"
+          }
+        ],
+        "avg_monthly": 3111748
+      },
+      "duration": 195,
+      "gender": [
+        {
+          "gender": "K-Pop"
+        }
+      ],
+      "single": false,
+      "repro": 175734884
+    },
+    {
+      "name": "Gogobebe",
+      "author": {
+        "name": "MAMAMOO",
+        "band": [
+          {
+            "name": "Hwasa",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 2932958
+          },
+          {
+            "name": "Solar",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 1230828
+          },
+          {
+            "name": "Wheein",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 832909
+          },
+          {
+            "name": "Moonbyul",
+            "genders": [
+              {
+                "gender": "K-Pop"
+              }
+            ],
+            "avg_monthly": 705790
+          }
+        ],
+        "genders": [
+          {
+            "gender": "K-Pop"
+          }
+        ],
+        "avg_monthly": 3111748
+      },
+      "duration": 195,
+      "gender": [
+        {
+          "gender": "K-Pop"
+        }
+      ],
+      "single": false,
+      "repro": 94616236
+    },
+    {
+      "name": "MEGALOVANIA",
+      "author": {
+        "name": "Toby Fox",
+        "genders": [
+          {
+            "gender": "Banda Sonora"
+          }
+        ],
+        "avg_monthly": 2516369
+      },
+      "duration": 156,
+      "gender": [
+        {
+          "gender": "Banda Sonora"
+        }
+      ],
+      "single": false,
+      "repro": 112608905
+    },
+    {
+      "name": "His Theme",
+      "author": {
+        "name": "Toby Fox",
+        "genders": [
+          {
+            "gender": "Banda Sonora"
+          }
+        ],
+        "avg_monthly": 2516369
+      },
+      "duration": 125,
+      "gender": [
+        {
+          "gender": "Banda Sonora"
+        }
+      ],
+      "single": false,
+      "repro": 14721484
+    },
+    {
+      "name": "Death by Glamour",
+      "author": {
+        "name": "Toby Fox",
+        "genders": [
+          {
+            "gender": "Banda Sonora"
+          }
+        ],
+        "avg_monthly": 2516369
+      },
+      "duration": 134,
+      "gender": [
+        {
+          "gender": "Banda Sonora"
+        }
+      ],
+      "single": false,
+      "repro": 35193223
+    },
+    {
+      "name": "Hopes and Dreams",
+      "author": {
+        "name": "Toby Fox",
+        "genders": [
+          {
+            "gender": "Banda Sonora"
+          }
+        ],
+        "avg_monthly": 2516369
+      },
+      "duration": 181,
+      "gender": [
+        {
+          "gender": "Banda Sonora"
+        }
+      ],
+      "single": false,
+      "repro": 27407100
+    },
+    {
+      "name": "Bonetrousle",
+      "author": {
+        "name": "Toby Fox",
+        "genders": [
+          {
+            "gender": "Banda Sonora"
+          }
+        ],
+        "avg_monthly": 2516369
+      },
+      "duration": 57,
+      "gender": [
+        {
+          "gender": "Banda Sonora"
+        }
+      ],
+      "single": false,
+      "repro": 22598024
+    },
+    {
+      "name": "Haberlo Pensado Antes",
+      "author": {
+        "name": "Locoplaya",
+        "band": [
+          {
+            "name": "Bejo",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 496464
+          },
+          {
+            "name": "Geni Colegui",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 19681
+          },
+          {
+            "name": "Don Patricio",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 2664439
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Rap"
+          }
+        ],
+        "avg_monthly": 224151
+      },
+      "duration": 200,
+      "gender": [
+        {
+          "gender": "Rap"
+        }
+      ],
+      "single": false,
+      "repro": 460666
+    },
+    {
+      "name": "Vacaciones Pagadas",
+      "author": {
+        "name": "Locoplaya",
+        "band": [
+          {
+            "name": "Bejo",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 496464
+          },
+          {
+            "name": "Geni Colegui",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 19681
+          },
+          {
+            "name": "Don Patricio",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 2664439
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Rap"
+          }
+        ],
+        "avg_monthly": 224151
+      },
+      "duration": 174,
+      "gender": [
+        {
+          "gender": "Rap"
+        }
+      ],
+      "single": true,
+      "repro": 478386
+    },
+    {
+      "name": "Crazy",
+      "author": {
+        "name": "Locoplaya",
+        "band": [
+          {
+            "name": "Bejo",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 496464
+          },
+          {
+            "name": "Geni Colegui",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 19681
+          },
+          {
+            "name": "Don Patricio",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 2664439
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Rap"
+          }
+        ],
+        "avg_monthly": 224151
+      },
+      "duration": 237,
+      "gender": [
+        {
+          "gender": "Rap"
+        }
+      ],
+      "single": false,
+      "repro": 12553334
+    },
+    {
+      "name": "Gigantes o Molinos?",
+      "author": {
+        "name": "Locoplaya",
+        "band": [
+          {
+            "name": "Bejo",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 496464
+          },
+          {
+            "name": "Geni Colegui",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 19681
+          },
+          {
+            "name": "Don Patricio",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 2664439
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Rap"
+          }
+        ],
+        "avg_monthly": 224151
+      },
+      "duration": 202,
+      "gender": [
+        {
+          "gender": "Rap"
+        }
+      ],
+      "single": false,
+      "repro": 475331
+    },
+    {
+      "name": "El Paisaje",
+      "author": {
+        "name": "Locoplaya",
+        "band": [
+          {
+            "name": "Bejo",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 496464
+          },
+          {
+            "name": "Geni Colegui",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 19681
+          },
+          {
+            "name": "Don Patricio",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 2664439
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Rap"
+          }
+        ],
+        "avg_monthly": 224151
+      },
+      "duration": 227,
+      "gender": [
+        {
+          "gender": "Rap"
+        }
+      ],
+      "single": true,
+      "repro": 2669480
+    }
+  ]
+}
