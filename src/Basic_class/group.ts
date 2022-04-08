@@ -1,14 +1,14 @@
 import { Album, AlbumInterface } from "./album";
+import { Song } from "./song";
 import { MusicGender, MusicGenderInterface} from "./music_gender";
 import { Artist, ArtistInterface } from "./artist";
 
 export interface GroupInterface {
   name: string,
-  band: ArtistInterface,
   gender: MusicGenderInterface[],
   avg: number,
-  album: AlbumInterface[];
-
+  album: AlbumInterface[],
+  band: ArtistInterface[]
 }
 
 /**
@@ -23,8 +23,7 @@ export class Group {
    * @param avg_monthly media de oyentes mensuales
    */
   constructor(protected name: string, protected band: Artist[], 
-    protected genders: MusicGender[], protected avg_monthly: number, 
-    protected albums: Album[] = []) {
+    protected genders: MusicGender[], protected avg_monthly: number) {
 
   }
 
@@ -50,14 +49,6 @@ export class Group {
    */
   public getGender(): MusicGender[] {
    return this.genders;
-  }
-
-  /**
-   * Retorna los albumes del grupo
-   * @returns Album[]
-   */
-  public getAlbums(): Album[] {
-   return this.albums;
   }
 
   /**
@@ -90,14 +81,6 @@ export class Group {
    */
   setGender(new_gender: MusicGender[]) {
     this.genders = new_gender;
-  }
-
-  /**
-   * Modifica los albunes del grupo
-   * @param new_albums nueva coleccion de albunes
-   */
-  setAlbums(new_albums: Album[]) {
-    this.albums = new_albums;
   }
 
   /**
@@ -158,29 +141,13 @@ export class Group {
     return(aux != this.genders.length);
   }
 
+ public static deserialize(group: GroupInterface): Group {
+    let aux_g: MusicGender[] = [];
+    group.gender.forEach((item) => {aux_g.push(new MusicGender(item.gender))});
 
-  /**
-   * Añade un nuevo album
-   * @param album nuevo album a añadir
-   * @returns booleano que indica si se añadió correctamente
-   */
-  addAlbum(album: Album): boolean {
-    let aux = this.albums.length;
-    this.albums.push(album);
-    return(aux != this.albums.length)
-  }
-
-  /**
-   * Elimina el ultimo elemento insertado
-   * @returns booleano que indica si se eliminó correctamente
-   */
-  deleteAlbum(album: string) : boolean {
-    let aux = this.albums.length;
-    this.albums.forEach((item, index) => {
-      if(item.getName() == album) {
-        this.getAlbums().splice(index, 1);
-      }
-    });
-    return(aux != this.albums.length)
-  }
+    let aux_band: Artist[] = [];
+    group.band.forEach((item) =>{aux_band.push(new Artist(item.name, aux_g, item.avg))});
+    
+    return new Group(group.name, aux_band, aux_g, group.avg);
+ }
 }

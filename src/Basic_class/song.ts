@@ -3,7 +3,7 @@ import { Artist, ArtistInterface } from "./artist";
 import { Group, GroupInterface } from "./group";
 
 
-export interface SongInterface{
+export interface SongInterface {
   name: string,
   author: GroupInterface|ArtistInterface,
   duration: number,
@@ -18,7 +18,7 @@ export class Song {
   /**
    * Clase que define un objeto cancion
    * @param name nombre de la cancion
-   * @param autor nombre del autor/autores de la cancion
+   * @param author nombre del autor/autores de la cancion
    * @param duration tiempo de duracion de la cancion 
    * @param gender genero musical de la cancion
    * @param single flag para saber si ha salido como single o no
@@ -26,7 +26,7 @@ export class Song {
    */
   constructor(protected name: string, protected author: Group|Artist, 
     protected duration: number, protected gender: MusicGender[], 
-    protected single: boolean, protected repro: number){
+    protected single: boolean, protected repro: number) {
   }
 
   /**
@@ -151,6 +151,18 @@ export class Song {
   }
 
   public static deserialize(song: SongInterface): Song {
-    return new Song(song.name, song.author, song.duration, song.gender, song.single, song.repro);
+    let aux_g: MusicGender[] = [];
+    song.gender.forEach((item) => {aux_g.push(new MusicGender(item.gender))});
+
+    if('band' in song.author) { 
+      let aux_band: Artist[] = [];
+      song.author.band.forEach((item) => {aux_band.push(new Artist(item.name, aux_g, item.avg))});
+      let aux_author: Group = new Group(song.author.name, aux_band, aux_g, song.author.avg);
+      return new Song(song.name, aux_author, song.duration, aux_g, song.single, song.repro);
+      
+    } else {
+      let aux_author: Artist = new Artist(song.author.name, aux_g, song.author.avg);
+      return new Song(song.name, aux_author, song.duration, aux_g, song.single, song.repro);
+    }
   }
 }

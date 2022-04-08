@@ -1,13 +1,13 @@
-import { Song, SongInterface } from "./song";
-import { MusicGender, MusicGenderInterface } from "./music_gender";
+import { Song/*, SongInterface */} from "./song";
+import { MusicGender/*, MusicGenderInterface */} from "./music_gender";
 
 
-export interface PlaylistInterface{
-  name: string,
-  songs: SongInterface[],
-  duration: number,
-  genders: MusicGenderInterface[]
-}
+// export interface PlaylistInterface{
+//   name: string,
+//   songs: SongInterface[],
+//   duration: number,
+//   genders: MusicGenderInterface[]
+// }
 /**
  * Clase que representa a una playlist
  */

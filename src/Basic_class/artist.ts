@@ -1,4 +1,5 @@
 import { Group } from "./group";
+import { Song } from "./song";
 import { MusicGender, MusicGenderInterface} from "./music_gender";
 import { Album, AlbumInterface } from "./album";
 
@@ -22,7 +23,7 @@ export class Artist {
    * @param avg_monthly cantidad de oyentes mensuales
    */
   constructor(protected name: string, protected genders: MusicGender[], 
-    protected avg_monthly: number, protected albums: Album[] = []) {
+    protected avg_monthly: number) {
   }
 
   /**
@@ -63,14 +64,6 @@ export class Artist {
   }
 
   /**
-   * Retorna los albumes
-   * @returns 
-   */
-  public getAlbum(): Album[] {
-    return this.albums;
-  }
-
-  /**
    * Modifica el nombre del artista
    * @param new_name nuevo nombre
    */
@@ -94,14 +87,6 @@ export class Artist {
     this.avg_monthly = new_avg;
   }
   
-  /**
-   * Modifica los albumes
-   * @param new_albums 
-   */
-  setAlbum(new_albums: Album[]) {
-    this.albums = new_albums;
-  }
-
   /**
    * Añade un Genero a los generos ya existentes
    * @param new_gender nuevo genero a agregar
@@ -128,30 +113,11 @@ export class Artist {
     return(aux != this.genders.length);
   }
 
+  public static deserialize (artist: ArtistInterface): Artist {
+    let aux_g: MusicGender[] = [];
+    artist.gender.forEach((item) => {aux_g.push(new MusicGender(item.gender))});
 
-  /**
-   * Añade un nuevo album
-   * @param album nuevo album a añadir
-   * @returns booleano que indica si se añadió correctamente
-   */
-  addAlbum(album: Album): boolean {
-    let aux = this.albums.length;
-    this.albums.push(album);
-    return(aux != this.albums.length)
-  }
-
-  /**
-   * Elimina el ultimo elemento insertado
-   * @returns booleano que indica si se eliminó correctamente
-   */
-  deleteAlbum(album: string) : boolean {
-    let aux = this.albums.length;
-    this.albums.forEach((item, index) => {
-      if(item.getName() == album) {
-        this.getAlbum().splice(index, 1);
-      }
-    });
-    return(aux != this.albums.length)
+    return new Artist(artist.name, aux_g, artist.avg);
   }
 
 }

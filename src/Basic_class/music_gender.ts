@@ -31,4 +31,8 @@ export class MusicGender {
   setMusicGender(new_gender: string) {
     this.gender = new_gender;
   }
+
+  public static deserialize(music_gender: MusicGenderInterface): MusicGender {
+    return new MusicGender(music_gender.gender);
+  }
 }

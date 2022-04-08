@@ -40,11 +40,6 @@ describe("Comprobación de lso atributos de la clase Group", () => {
     data.MAMAMOO.setGender([data.Kpop]);
   });
 
-  it("Getter y Setter de los Albumes", () => {
-    data.Locoplaya.setAlbums([data.Nasarati]);
-    expect(data.Locoplaya.getAlbums()).to.be.eql([data.Nasarati]);
-  });
-
   it("Añadir artista al grupo", () => {
     expect(data.Fito_y_Fitipaldis.addArtist(data.David_Draiman)).to.be.true;
   });
@@ -59,13 +54,5 @@ describe("Comprobación de lso atributos de la clase Group", () => {
 
   it("Eliminar un genero al grupo", () => {
     expect(data.MAMAMOO.deleteGender('Blues')).to.be.true;
-  });
-
-  it("Añadir album de a grupo", () => {
-    expect(data.Locoplaya.addAlbum(data.Asylum)).to.be.true;
-  });
-
-  it("Eliminar album de un grupo", () => {
-    expect(data.Locoplaya.deleteAlbum("Asylum")).to.be.true;
   });
 });

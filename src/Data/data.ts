@@ -116,33 +116,33 @@ export let Undertale_Soundtrack = new Album('UNDERTALE Soundtrack', 2015, [Ost],
 export let Que_Dice_la_Juventud = new Album('Qué Dice la Juventud?', 2017, [Rap], [haberlo_pensado_antes, crazy, gigantes_o_molinos]);
 
 //Asignacion de los albumnes a artistas y grupos
-Disturbed.addAlbum(Asylum);
-Fito_y_Fitipaldis.addAlbum(Lo_mas_lejos_a_tu_lado);
-Caravan_Palace.addAlbum(Chronologic);
-MAMAMOO.addAlbum(Red_Moon);
-Locoplaya.addAlbum(Que_Dice_la_Juventud);
-David_Draiman.addAlbum(Asylum);
-John_Moyer.addAlbum(Asylum);
-Mike_Wengren.addAlbum(Asylum);
-Dan_Donegan.addAlbum(Asylum);
-Steve_Wonder.addAlbum(Tribute_to_uncle_Ray);
-Lil_Nas_X.addAlbum(Nasarati);
-Fito.addAlbum(Lo_mas_lejos_a_tu_lado);
-Javier_Azola.addAlbum(Lo_mas_lejos_a_tu_lado);
-Jose_Bruno.addAlbum(Lo_mas_lejos_a_tu_lado);
-Ricardo_Cantera.addAlbum(Lo_mas_lejos_a_tu_lado);
-Bruno_Mars.addAlbum(Unorthodox_jukebox);
-Juan_Luis_war.addAlbum(La_llave_de_mi_corazon);
-Zoe_Colotis.addAlbum(Chronologic);
-Arnaud_Vial.addAlbum(Chronologic);
-Hugues_Payen.addAlbum(Chronologic);
-Hwasa.addAlbum(Red_Moon);
-Solar.addAlbum(Red_Moon);
-Wheein.addAlbum(Red_Moon);
-Moonbyul.addAlbum(Red_Moon);
-Toby_fox.addAlbum(Undertale_Soundtrack);
-Geni_Colegui.addAlbum(Que_Dice_la_Juventud);
-Don_Patricio.addAlbum(Que_Dice_la_Juventud);
+// Disturbed.addAlbum(Asylum);
+// Fito_y_Fitipaldis.addAlbum(Lo_mas_lejos_a_tu_lado);
+// Caravan_Palace.addAlbum(Chronologic);
+// MAMAMOO.addAlbum(Red_Moon);
+// Locoplaya.addAlbum(Que_Dice_la_Juventud);
+// David_Draiman.addAlbum(Asylum);
+// John_Moyer.addAlbum(Asylum);
+// Mike_Wengren.addAlbum(Asylum);
+// Dan_Donegan.addAlbum(Asylum);
+// Steve_Wonder.addAlbum(Tribute_to_uncle_Ray);
+// Lil_Nas_X.addAlbum(Nasarati);
+// Fito.addAlbum(Lo_mas_lejos_a_tu_lado);
+// Javier_Azola.addAlbum(Lo_mas_lejos_a_tu_lado);
+// Jose_Bruno.addAlbum(Lo_mas_lejos_a_tu_lado);
+// Ricardo_Cantera.addAlbum(Lo_mas_lejos_a_tu_lado);
+// Bruno_Mars.addAlbum(Unorthodox_jukebox);
+// Juan_Luis_war.addAlbum(La_llave_de_mi_corazon);
+// Zoe_Colotis.addAlbum(Chronologic);
+// Arnaud_Vial.addAlbum(Chronologic);
+// Hugues_Payen.addAlbum(Chronologic);
+// Hwasa.addAlbum(Red_Moon);
+// Solar.addAlbum(Red_Moon);
+// Wheein.addAlbum(Red_Moon);
+// Moonbyul.addAlbum(Red_Moon);
+// Toby_fox.addAlbum(Undertale_Soundtrack);
+// Geni_Colegui.addAlbum(Que_Dice_la_Juventud);
+// Don_Patricio.addAlbum(Que_Dice_la_Juventud);
 
 //Playlist
 

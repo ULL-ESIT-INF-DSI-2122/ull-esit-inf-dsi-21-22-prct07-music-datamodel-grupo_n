@@ -98,20 +98,9 @@ describe('Comprobación de los atributos de la clase Artist', () => {
     expect(data.Hwasa.getGenders()).to.be.eql([data.Kpop, data.Heavy_Metal]);
     data.Hwasa.setGenders([data.Kpop]);
   });
-  it('Comprobamos que podemos acceder y modificar el atributo albums', () => {
-    expect(data.Toby_fox.getAlbum()).to.be.eql([data.Undertale_Soundtrack]);
-    data.Toby_fox.setAlbum([data.Tribute_to_uncle_Ray]);
-    expect(data.Toby_fox.getAlbum()).to.be.eql([data.Tribute_to_uncle_Ray]);
-    data.Toby_fox.setAlbum([data.Undertale_Soundtrack]);
-  });
 
   it('Comprobamos que podemos añadir y eliminar generos', () => {
     expect(data.Toby_fox.addGender(data.Pop)).to.be.true;
     expect(data.Toby_fox.deleteGender('Pop')).to.be.true;
   });
-  
-  it('Comprobamos que podemos añadir y eliminar albumes', () => {
-    expect(data.Juan_Luis_war.addAlbum(data.Chronologic)).to.be.true;
-    expect(data.Juan_Luis_war.deleteAlbum("Chronologic")).to.be.true;
-  }); 
 });
