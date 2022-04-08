@@ -1,0 +1,34 @@
+{
+  "group": [
+    {
+      "gender": "Heavy Metal"
+    },
+    {
+      "gender": "R&B"
+    },
+    {
+      "gender": "Blues"
+    },
+    {
+      "gender": "Rock Español"
+    },
+    {
+      "gender": "Pop"
+    },
+    {
+      "gender": "Bachata"
+    },
+    {
+      "gender": "Electro Swing"
+    },
+    {
+      "gender": "K-Pop"
+    },
+    {
+      "gender": "Banda Sonora"
+    },
+    {
+      "gender": "Rap"
+    }
+  ]
+}

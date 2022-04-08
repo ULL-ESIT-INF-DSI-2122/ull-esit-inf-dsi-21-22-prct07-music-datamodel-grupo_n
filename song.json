@@ -1,60 +1,73 @@
 {
-  "song": {
-    "name": "Want",
-    "author": {
-      "name": "Disturbed",
-      "band": [
+  "song": [
+    {
+      "name": "La bilirrubina",
+      "author": {
+        "name": "Juan Luis Guerra",
+        "genders": [
+          {
+            "gender": "Bachata"
+          }
+        ],
+        "avg_monthly": 7220793
+      },
+      "duration": 243,
+      "gender": [
         {
-          "name": "David Draiman",
-          "genders": [
-            {
-              "gender": "Heavy Metal"
-            }
-          ],
-          "avg_monthly": 539048
-        },
-        {
-          "name": "John Moyer",
-          "genders": [
-            {
-              "gender": "Heavy Metal"
-            }
-          ],
-          "avg_monthly": 0
-        },
-        {
-          "name": "Mike Wengren",
-          "genders": [
-            {
-              "gender": "Heavy Metal"
-            }
-          ],
-          "avg_monthly": 112
-        },
-        {
-          "name": "Dan Donegan",
-          "genders": [
-            {
-              "gender": "Heavy Metal"
-            }
-          ],
-          "avg_monthly": 0
+          "gender": "Bachata"
         }
       ],
-      "genders": [
-        {
-          "gender": "Heavy Metal"
-        }
-      ],
-      "avg_monthly": 8850577
+      "single": false,
+      "repro": 38323024
     },
-    "duration": 195,
-    "gender": [
-      {
-        "gender": "Heavy Metal"
-      }
-    ],
-    "single": false,
-    "repro": 7256401
-  }
+    {
+      "name": "Crazy",
+      "author": {
+        "name": "Locoplaya",
+        "band": [
+          {
+            "name": "Bejo",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 496464
+          },
+          {
+            "name": "Geni Colegui",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 19681
+          },
+          {
+            "name": "Don Patricio",
+            "genders": [
+              {
+                "gender": "Rap"
+              }
+            ],
+            "avg_monthly": 2664439
+          }
+        ],
+        "genders": [
+          {
+            "gender": "Rap"
+          }
+        ],
+        "avg_monthly": 224151
+      },
+      "duration": 237,
+      "gender": [
+        {
+          "gender": "Rap"
+        }
+      ],
+      "single": false,
+      "repro": 12553334
+    }
+  ]
 }

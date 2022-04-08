@@ -17,6 +17,8 @@ export let Kpop = new MusicGender('K-Pop');
 export let Ost = new MusicGender('Banda Sonora');
 export let Rap = new MusicGender('Rap');
 
+export let All_Genders: MusicGender[] = [Heavy_Metal, RyB, Blues, Rock_Esp, Pop, Bachata, Electro_Swing, Kpop, Ost, Rap];
+
 //Artist
 export let David_Draiman = new Artist("David Draiman", [Heavy_Metal], 539048);
 export let John_Moyer = new Artist("John Moyer", [Heavy_Metal], 0);
@@ -42,6 +44,11 @@ export let Bejo = new Artist('Bejo', [Rap], 496464); // bejito el cantarin
 export let Geni_Colegui = new Artist('Geni Colegui', [Rap], 19681);
 export let Don_Patricio = new Artist('Don Patricio', [Rap], 2664439);
 
+export let All_artist: Artist[] = [David_Draiman, John_Moyer, Mike_Wengren, Dan_Donegan, 
+                                   Steve_Wonder, Lil_Nas_X, Fito, Javier_Azola, Jose_Bruno, 
+                                   Ricardo_Cantera, Bruno_Mars, Juan_Luis_war, Zoe_Colotis, 
+                                   Arnaud_Vial, Hugues_Payen, Hwasa, Solar, Wheein, Moonbyul, 
+                                   Toby_fox, Bejo, Geni_Colegui, Don_Patricio];
 
 //Groups
 export let Disturbed = new Group('Disturbed', [David_Draiman, John_Moyer, Mike_Wengren, Dan_Donegan], [Heavy_Metal], 8850577);
@@ -49,6 +56,8 @@ export let Fito_y_Fitipaldis = new Group('Fito y Fitipaldis', [Fito, Javier_Azol
 export let Caravan_Palace = new Group('Caravan Palace', [Zoe_Colotis, Arnaud_Vial, Hugues_Payen], [Electro_Swing], 1860398);
 export let MAMAMOO = new Group('MAMAMOO', [Hwasa, Solar, Wheein, Moonbyul], [Kpop], 3111748);
 export let Locoplaya = new Group('Locoplaya', [Bejo, Geni_Colegui, Don_Patricio], [Rap], 224151); 
+
+export let All_Group: Group[] = [Disturbed, Fito_y_Fitipaldis, Caravan_Palace, MAMAMOO, Locoplaya];
 
 //Song
 export let Down_with_the_sickness = new Song('Down With The Sickness', Disturbed, 263, [Heavy_Metal], false, 516338655);
@@ -102,6 +111,13 @@ export let crazy = new Song('Crazy', Locoplaya, 237, [Rap], false, 12553334);
 export let gigantes_o_molinos = new Song('Gigantes o Molinos?', Locoplaya, 202, [Rap], false, 475331);
 export let el_paisaje = new Song('El Paisaje', Locoplaya, 227, [Rap], true, 2669480);
 
+export let All_Songs: Song[] = [Down_with_the_sickness, Numb, Savior_of_nothig, Want, Stupify, Industry_Baby, Montero, Sun_Goes_Down, 
+                                Old_Town_Road, Holiday, Smile, Sunset, Superstition, So_what_the_fuss, Frankye_and_Johnny, Garabatos, 
+                                La_casa_por_el_tejado, Me_equivocaria_otra_vez, Por_la_boca_vive_el_pez, Soldadito_marinero, Treasure, 
+                                Grenade, Just_the_way_you_are, Uptown_Funk, Smoking_out_the_window, Ojala_que_llueva_cafe, La_guagua, 
+                                La_bilirrubina, Burbujas_de_amor, El_niagara_en_bicicleta, wonderland, melancolia, miracle, lone_digger, 
+                                plume, wind_flower, piano_man, egotistic, hip, gogobebe, megalovania, his_theme, death_by_glamour, 
+                                hopes_and_dreams, bonetrousle, haberlo_pensado_antes, vacaciones_pagadas, crazy, gigantes_o_molinos, el_paisaje];
 
 //Album
 export let Asylum = new Album('Asylum', 2009, [Heavy_Metal], [Down_with_the_sickness, Numb, Savior_of_nothig, Want, Stupify]);
@@ -115,34 +131,8 @@ export let Red_Moon = new Album('Red Moon', 2018, [Kpop], [wind_flower, egotisti
 export let Undertale_Soundtrack = new Album('UNDERTALE Soundtrack', 2015, [Ost], [megalovania, his_theme, death_by_glamour, hopes_and_dreams, bonetrousle]);
 export let Que_Dice_la_Juventud = new Album('Qué Dice la Juventud?', 2017, [Rap], [haberlo_pensado_antes, crazy, gigantes_o_molinos]);
 
-//Asignacion de los albumnes a artistas y grupos
-// Disturbed.addAlbum(Asylum);
-// Fito_y_Fitipaldis.addAlbum(Lo_mas_lejos_a_tu_lado);
-// Caravan_Palace.addAlbum(Chronologic);
-// MAMAMOO.addAlbum(Red_Moon);
-// Locoplaya.addAlbum(Que_Dice_la_Juventud);
-// David_Draiman.addAlbum(Asylum);
-// John_Moyer.addAlbum(Asylum);
-// Mike_Wengren.addAlbum(Asylum);
-// Dan_Donegan.addAlbum(Asylum);
-// Steve_Wonder.addAlbum(Tribute_to_uncle_Ray);
-// Lil_Nas_X.addAlbum(Nasarati);
-// Fito.addAlbum(Lo_mas_lejos_a_tu_lado);
-// Javier_Azola.addAlbum(Lo_mas_lejos_a_tu_lado);
-// Jose_Bruno.addAlbum(Lo_mas_lejos_a_tu_lado);
-// Ricardo_Cantera.addAlbum(Lo_mas_lejos_a_tu_lado);
-// Bruno_Mars.addAlbum(Unorthodox_jukebox);
-// Juan_Luis_war.addAlbum(La_llave_de_mi_corazon);
-// Zoe_Colotis.addAlbum(Chronologic);
-// Arnaud_Vial.addAlbum(Chronologic);
-// Hugues_Payen.addAlbum(Chronologic);
-// Hwasa.addAlbum(Red_Moon);
-// Solar.addAlbum(Red_Moon);
-// Wheein.addAlbum(Red_Moon);
-// Moonbyul.addAlbum(Red_Moon);
-// Toby_fox.addAlbum(Undertale_Soundtrack);
-// Geni_Colegui.addAlbum(Que_Dice_la_Juventud);
-// Don_Patricio.addAlbum(Que_Dice_la_Juventud);
+export let All_Albums: Album[] = [Asylum, Nasarati, Tribute_to_uncle_Ray, Lo_mas_lejos_a_tu_lado, Unorthodox_jukebox, La_llave_de_mi_corazon, 
+                                  Chronologic, Red_Moon, Undertale_Soundtrack, Que_Dice_la_Juventud];
 
 //Playlist
 
@@ -151,9 +141,10 @@ export let Heavy_ESP = new Playlist('Heavy & Fipaldis', [Down_with_the_sickness,
 
 //Playlist de Ryb y Blues
 export let Ryblues = new Playlist('RyBlues',[Industry_Baby, Montero, Sun_Goes_Down, Old_Town_Road, Holiday, Smile, Sunset, Superstition, So_what_the_fuss, Frankye_and_Johnny], 2051, [RyB, Blues]);
-//Playlist Electro Swing y Kpop
 
+//Playlist Electro Swing y Kpop
 export let K_Electro = new Playlist('K-Electro', [wonderland, melancolia, miracle, lone_digger, plume, wind_flower, egotistic, hip, gogobebe, piano_man], 2078, [Electro_Swing, Kpop]);
+
 //Playlist Mix 
 export let Mix = new Playlist('Mix', [Treasure, Grenade, Just_the_way_you_are, Uptown_Funk, Smoking_out_the_window, Ojala_que_llueva_cafe, La_guagua, La_bilirrubina, Burbujas_de_amor, El_niagara_en_bicicleta, megalovania, his_theme, death_by_glamour, hopes_and_dreams, bonetrousle, haberlo_pensado_antes, vacaciones_pagadas, crazy, gigantes_o_molinos, el_paisaje], 3933, [Pop, Bachata, Ost, Rap])
 
