@@ -3,6 +3,9 @@ import { MusicGender, MusicGenderInterface } from './music_gender';
 import { Group } from './group';
 import { Song, SongInterface} from './song';
 
+/**
+ * Interface que utiliza los atributos con los que se crean lso objetos de tipo Album
+ */
 export interface AlbumInterface {
   name: string,
   year: number, 
@@ -137,6 +140,11 @@ export class Album {
     return(aux != this.album_songs.length);
   }
 
+  /**
+   * Permite instanciar un vector de Album a partir de un vector de la interface AlbumINterface
+   * @param album array sobre loq eu construiremos
+   * @returns Album[]
+   */
   public static deserialize(album: AlbumInterface[]): Album[] {
     let aux_array: Album[] = [];
 

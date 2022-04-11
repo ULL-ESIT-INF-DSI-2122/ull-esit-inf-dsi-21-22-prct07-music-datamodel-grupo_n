@@ -1,4 +1,6 @@
-
+/**
+ * Interface que utiliza los atributos con los que se crean los objetos de tipo MusicGender
+ */
 export interface MusicGenderInterface {
   gender: string
 }
@@ -32,6 +34,11 @@ export class MusicGender {
     this.gender = new_gender;
   }
 
+  /**
+   * Funcion que nos permite instanciar un nuevo objeto MusicGender a travez de la interfaz MusicGenderInterface 
+   * @param music_gender array de tipo MusicGenderInterface
+   * @returns MusicGender[]
+   */
   public static deserialize(music_gender: MusicGenderInterface[]): MusicGender[] {
     let aux_array: MusicGender[] = [];
     music_gender.forEach((element) => {

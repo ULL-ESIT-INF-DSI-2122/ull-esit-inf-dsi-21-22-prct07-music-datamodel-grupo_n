@@ -2,7 +2,9 @@ import { MusicGender, MusicGenderInterface } from "./music_gender";
 import { Artist, ArtistInterface } from "./artist";
 import { Group, GroupInterface } from "./group";
 
-
+/**
+ * Interface que utiliza los atributos con los que se crean los objetos de tipo Song
+ */
 export interface SongInterface {
   name: string,
   author: GroupInterface|ArtistInterface,
@@ -150,6 +152,11 @@ export class Song {
     return(aux != this.gender.length);
   }
 
+  /**
+   * Permite instancias un nuevo objeto de Song a partir de un vector de SongInterface
+   * @param song array de tipo songinterfaces
+   * @returns Song[]
+   */
   public static deserialize(song: SongInterface[]): Song[] {
     let aux_array: Song[] = [];
 

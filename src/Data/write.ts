@@ -17,6 +17,11 @@ export interface SchemaInterface {
   song: SongInterface
 }
 
+/**
+ * Duncion que nos permite escribir datos dentro del fichero json correspondiente
+ * @param option String que sera el nombre del fichero sobre el que se escribira
+ * @param object Objetos del cual se pasara la informacion a el json 
+ */
 export function Write(option: string, object: Album[]|Artist[]|Group[]|MusicGender[]|Song[]|Playlist[]) {
   const ext: string = '.json';
   const path: string = './database/';

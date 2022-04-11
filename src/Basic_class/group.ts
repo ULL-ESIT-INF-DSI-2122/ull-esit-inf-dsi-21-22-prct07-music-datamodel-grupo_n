@@ -3,6 +3,9 @@ import { Song } from "./song";
 import { MusicGender, MusicGenderInterface} from "./music_gender";
 import { Artist, ArtistInterface } from "./artist";
 
+/**
+ * Interface que utiliza los atributos con los que se crean los objetos de tipo Group
+ */
 export interface GroupInterface {
   name: string,
   gender: MusicGenderInterface[],
@@ -141,6 +144,11 @@ export class Group {
     return(aux != this.genders.length);
   }
 
+  /**
+   * Funcion que nos permite intanciar un nuevo objeto Group a travez de la interfaz GroupInterface
+   * @param group array sobre el que trabajaremos 
+   * @returns Group[]
+   */
   public static deserialize(group: GroupInterface[]): Group[] {
     let aux_array: Group[] = [];
     

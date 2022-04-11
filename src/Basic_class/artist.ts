@@ -3,6 +3,9 @@ import { Song } from "./song";
 import { MusicGender, MusicGenderInterface} from "./music_gender";
 import { Album, AlbumInterface } from "./album";
 
+/**
+ * Interface que utiliza los atributos con los que se crean los objetos de tipo Artist
+ */
 export interface ArtistInterface {
   name: string,
   gender: MusicGenderInterface[],
@@ -113,6 +116,11 @@ export class Artist {
     return(aux != this.genders.length);
   }
 
+  /**
+   * Funcion que nos permite instanciar un nuevo objeto de clase Artista a travez de la interfaz ArtistInterface
+   * @param artist array sobre el que trabajaremos
+   * @returns Artist[]
+   */
   public static deserialize (artist: ArtistInterface[]): Artist[] {
     let aux_array: Artist[] = [];
 

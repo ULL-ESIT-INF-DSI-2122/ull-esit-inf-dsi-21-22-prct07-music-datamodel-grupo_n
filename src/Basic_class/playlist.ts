@@ -3,7 +3,9 @@ import { MusicGender, MusicGenderInterface } from "./music_gender";
 import { Artist } from "./artist";
 import { Group } from "./group";
 
-
+/**
+ * Interface que utiliza los atributos con los que se crean los objetos de tipo Playlist
+ */
 export interface PlaylistInterface{
   name: string,
   songs: SongInterface[],
@@ -139,6 +141,11 @@ export class Playlist {
     return(aux != this.genders.length);
   }
   
+  /**
+   * Funcion que permite crear un nuevo array de Playlist a traves de un array de PlaylistInterface
+   * @param playlist array siobre el que trabajaremos
+   * @returns Playlist[]
+   */
   public static deserialize (playlist: PlaylistInterface[]): Playlist[] {
     let aux_array: Playlist[] = [];
 
