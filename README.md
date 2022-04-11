@@ -46,7 +46,7 @@ Por otro lado, tambien se realizaron pruebas sobre este código, para comprobar 
 -> [Pruebas](https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo_n/blob/main/tests/Basic_Class/music_gender.spec.ts)
 
 ### **3.1.2) SONG**
-Para las canciones se optó por un diseño donde tendremos el nombre, el autor, la duracion 
+Para las canciones se optó por un diseño donde tendremos el nombre, el autor, la duracion, así como los generos, un booleano para 
 
 ### **3.1.3) ALBUM**
 ### **3.1.4) GROUP**
