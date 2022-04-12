@@ -9,12 +9,12 @@ import { Song, SongInterface } from '../Basic_class/song';
 import * as data from './data';
 
 export interface SchemaInterface {
-  album: AlbumInterface,
-  artist: ArtistInterface,
-  group: GroupInterface,
-  musicGender: MusicGenderInterface,
-  playlist: PlaylistInterface,
-  song: SongInterface
+  album: AlbumInterface[],
+  artist: ArtistInterface[],
+  group: GroupInterface[],
+  musicGender: MusicGenderInterface[],
+  playlist: PlaylistInterface[],
+  song: SongInterface[]
 }
 
 /**
