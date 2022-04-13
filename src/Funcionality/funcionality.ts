@@ -245,12 +245,14 @@ class Funcionality {
    * Funcion que utiliza la interaccion del usuario para crear un nuevo album de musica en la base de datos
    */
   addAlbum() {
-
+    let name: string = '';
+    
   }
   /**
    * Funcion que utiliza la interaccion con el usuario para añadir un nuevo genero musical a la base de datos
    */
   addGender() {
+    let aux: string = "";
     
   }
 
