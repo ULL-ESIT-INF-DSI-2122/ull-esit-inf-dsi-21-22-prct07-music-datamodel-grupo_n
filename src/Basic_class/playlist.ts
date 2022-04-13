@@ -9,7 +9,6 @@ import { Group } from "./group";
 export interface PlaylistInterface{
   name: string,
   songs: SongInterface[],
-  duration: number,
   genders: MusicGenderInterface[],
   user: string
 }
@@ -26,9 +25,14 @@ export class Playlist {
    * @param genders Generos que se incluyen dentro de la playlist
    * @param user Nombre del usuario que ha creado la lista
    */
+  
+  protected duration: number;
+  protected genders: MusicGender[];
+  
   constructor(protected name: string, protected songs: Song[], 
-              protected duration: number, protected genders: MusicGender[],
               protected user: string) {
+    this.duration = 0;
+    this.genders = [];
   }
 
   /**
@@ -52,6 +56,12 @@ export class Playlist {
    * @returns Duración en segundos
    */
   public getDuration() : number {
+    let aux_duration: number = 0;
+    this.songs.forEach((element) => {
+      aux_duration += element.getDuration();
+    });
+
+    this.duration = aux_duration;
     return this.duration;
   }
 
@@ -60,6 +70,26 @@ export class Playlist {
    * @returns Generos dentro de la playlist
    */
   public getGenders() : MusicGender[] {
+    this.genders = [];
+    let aux_genders: MusicGender[] = [];
+    let finded: boolean = false;
+
+    this.songs.forEach((element) => {
+      aux_genders = [];
+      aux_genders = element.getGenders();
+      aux_genders.forEach((item) => {
+        finded = false;
+        this.genders.forEach((item2) => {
+          if (item2.getMusicGender() == item.getMusicGender()) {
+            finded = true;
+          }
+        });
+        if (!finded) {
+          this.genders.push(item);
+        }
+      });
+    });
+
     return this.genders;
   }
 
@@ -93,14 +123,6 @@ export class Playlist {
    */
   setDuration(duration: number) {
     this.duration = duration;
-  }
-
-  /**
-   * Setter del atributo genders
-   * @param genders nuevo conjunto de generos incluidos
-   */
-  setGenders(genders: MusicGender[]) {
-    this.genders = genders;
   }
 
   /**
@@ -185,7 +207,7 @@ export class Playlist {
         }
       });
       
-      aux_array.push(new Playlist(element.name, aux_s, element.duration, aux_g, element.user));
+      aux_array.push(new Playlist(element.name, aux_s, element.user));
     });
     
     return aux_array;

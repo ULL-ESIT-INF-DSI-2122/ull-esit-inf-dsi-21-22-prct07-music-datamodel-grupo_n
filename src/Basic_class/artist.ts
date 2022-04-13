@@ -9,8 +9,7 @@ import { Album, AlbumInterface } from "./album";
 export interface ArtistInterface {
   name: string,
   gender: MusicGenderInterface[],
-  avg: number,
-  album: AlbumInterface[]
+  avg: number
 }
 
 /**
@@ -21,7 +20,6 @@ export class Artist {
    * Clase que define a los artistas
    * @param name nombre del artista
    * @param genders generos musicales relacionados
-   * @param albums albums del artista
    * @param songs canciones del artista
    * @param avg_monthly cantidad de oyentes mensuales
    */

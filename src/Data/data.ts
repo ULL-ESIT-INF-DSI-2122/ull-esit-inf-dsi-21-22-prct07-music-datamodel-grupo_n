@@ -136,9 +136,9 @@ export let All_Albums: Album[] = [Asylum, Nasarati, Tribute_to_uncle_Ray, Lo_mas
 
 //Playlist
 
-export let Heavy_ESP = new Playlist('Heavy & Fipaldis', [Down_with_the_sickness, Numb, Savior_of_nothig, Want, Stupify, Garabatos, La_casa_por_el_tejado, Me_equivocaria_otra_vez, Soldadito_marinero, Por_la_boca_vive_el_pez], 2434, [Heavy_Metal, Rock_Esp], 'Admin');
-export let Ryblues = new Playlist('RyBlues',[Industry_Baby, Montero, Sun_Goes_Down, Old_Town_Road, Holiday, Smile, Sunset, Superstition, So_what_the_fuss, Frankye_and_Johnny], 2051, [RyB, Blues], 'Admin');
-export let K_Electro = new Playlist('K-Electro', [wonderland, melancolia, miracle, lone_digger, plume, wind_flower, egotistic, hip, gogobebe, piano_man], 2078, [Electro_Swing, Kpop], 'Album');
-export let Mix = new Playlist('Mix', [Treasure, Grenade, Just_the_way_you_are, Uptown_Funk, Smoking_out_the_window, Ojala_que_llueva_cafe, La_guagua, La_bilirrubina, Burbujas_de_amor, El_niagara_en_bicicleta, megalovania, his_theme, death_by_glamour, hopes_and_dreams, bonetrousle, haberlo_pensado_antes, vacaciones_pagadas, crazy, gigantes_o_molinos, el_paisaje], 3933, [Pop, Bachata, Ost, Rap], 'Admin')
+export let Heavy_ESP = new Playlist('Heavy & Fipaldis', [Down_with_the_sickness, Numb, Savior_of_nothig, Want, Stupify, Garabatos, La_casa_por_el_tejado, Me_equivocaria_otra_vez, Soldadito_marinero, Por_la_boca_vive_el_pez], 'Admin');
+export let Ryblues = new Playlist('RyBlues',[Industry_Baby, Montero, Sun_Goes_Down, Old_Town_Road, Holiday, Smile, Sunset, Superstition, So_what_the_fuss, Frankye_and_Johnny], 'Admin');
+export let K_Electro = new Playlist('K-Electro', [wonderland, melancolia, miracle, lone_digger, plume, wind_flower, egotistic, hip, gogobebe, piano_man], 'Album');
+export let Mix = new Playlist('Mix', [Treasure, Grenade, Just_the_way_you_are, Uptown_Funk, Smoking_out_the_window, Ojala_que_llueva_cafe, La_guagua, La_bilirrubina, Burbujas_de_amor, El_niagara_en_bicicleta, megalovania, his_theme, death_by_glamour, hopes_and_dreams, bonetrousle, haberlo_pensado_antes, vacaciones_pagadas, crazy, gigantes_o_molinos, el_paisaje], 'Admin')
 
 export let All_Playlist: Playlist[] = [Heavy_ESP, Ryblues, K_Electro, Mix];

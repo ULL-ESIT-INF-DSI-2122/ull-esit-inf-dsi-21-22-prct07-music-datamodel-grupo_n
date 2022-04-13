@@ -110,7 +110,9 @@ export interface AlbumInterface {
   song: SongInterface[]
 }
 ```
+
 Como ultimo hemos creado una funcion llamada `deserialize()` la cual nos permite crear objetos a través de traducir de un fichero json y crear un objeto de tipo **Album** con esa informacion (utilizando como parametro un atributo de `AlbumInterface`). Esta funcion se ve de la siguiente manera:
+
 
 ```typescript
   public static deserialize(album: AlbumInterface[]): Album[] {
@@ -181,6 +183,7 @@ Como ultimo hemos creado una funcion llamada `deserialize()` la cual nos permite
     return aux_array;
   }
 ```
+
 Para otras consultas sobre la clase, puede consultar el código completo en el siguiente link:  
 [-> group.ts](https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo_n/blob/main/src/Basic_class/group.ts)
 
@@ -188,12 +191,149 @@ Por otro lado, tambien se realizaron pruebas sobre este código, para comprobar 
 [-> Pruebas](https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo_n/blob/main/tests/Basic_Class/group.spec.ts)
 
 ### **3.1.5) ARTIST**
+Para los artistas se opto por el diseño donde tendremos el nombre del artista, los generos musicales del artista y el numero de reproducciones del artista. Con esta organizacion contamos con funciones que nos permiten interactuar con esos atributos como `getName()` y `setName()`.
+
+Para el uso de la herramienta **lowdb** se ha de crear una interfaz llamada **ArtistInterface**, la cual se ve de la siguiente manera:
+
+```typescript
+export interface ArtistInterface {
+  name: string,
+  gender: MusicGenderInterface[],
+  avg: number
+}
+```
+Como ultimo hemos creado una funcion llamada `deserialize()` la cual nos permite crear objetos a través de traducir de un fichero json y crear un objeto de tipo **Artist** con esa informacion (utilizando como parametro un atributo de `ArtistInterface`). Esta funcion se ve de la siguiente manera:
+
+```typescript
+ public static deserialize (artist: ArtistInterface[]): Artist[] {
+    let aux_array: Artist[] = [];
+
+    artist.forEach((element) => {
+      let aux_g: MusicGender[] = [];
+      element.gender.forEach((item) => {aux_g.push(new MusicGender(item.gender))});
+
+      aux_array.push(new Artist(element.name, aux_g, element.avg));
+    });
+    return aux_array;
+  }
+```
+
+Para otras consultas sobre la clase, puede consultar el código completo en el siguiente link:  
+[-> artist.ts](https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo_n/blob/main/src/Basic_class/artist.ts)
+
+Por otro lado, tambien se realizaron pruebas sobre este código, para comprobar que los objetos instanciados son de la misma clase y para comprobar que se puede leer y modificar el atributo de la clase. Las pruebas pueden ser consuntadas en el siguiente enlace:  
+[-> Pruebas](https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo_n/blob/main/tests/Basic_Class/artist.spec.ts)
+
 ### **3.1.6) PLAYLIST**
+Para las playlist se opto por el siguiente diseño donde tenemos el nombre de la playlist, las canciones que estan dentro de la playlist, la duracion de la playlist, la lista de generos que hay dentro de la playlist y el nombre del usuario creador de la playlist. Con esta organizacion contamos con funciones que nos permiten interactuar con esos atributos como `getUser()` y `setUser()`.
+
+Para el uso de la herramienta **lowdb** se ha de crear una interfaz llamada **ArtistInterface**, la cual se ve de la siguiente manera:
+
+```typescript
+export interface PlaylistInterface{
+  name: string,
+  songs: SongInterface[],
+  duration: number,
+  genders: MusicGenderInterface[],
+  user: string
+}
+```
+
+Como ultimo hemos creado una funcion llamada `deserialize()` la cual nos permite crear objetos a través de traducir de un fichero json y crear un objeto de tipo **Playlist** con esa informacion (utilizando como parametro un atributo de `PlaylistInterface`). Esta funcion se ve de la siguiente manera:
+
+```typescript
+  public static deserialize (playlist: PlaylistInterface[]): Playlist[] {
+    let aux_array: Playlist[] = [];
+
+    playlist.forEach((element) => {
+      let aux_g: MusicGender[] = [];
+      element.genders.forEach((item) => {aux_g.push(new MusicGender(item.gender))});
+  
+      let aux_s: Song[] = [];
+      element.songs.forEach((item) => {
+        if('band' in item.author) {
+          let aux_band: Artist[] = [];
+          item.author.band.forEach((item) => {aux_band.push(new Artist(item.name, aux_g, item.avg))});
+          let aux_author: Group = new Group(item.author.name, aux_band, aux_g, item.author.avg);
+          aux_s.push(new Song(item.name, aux_author, item.duration, aux_g, item.single, item.repro));
+        } else {
+          let aux_author: Artist = new Artist(item.author.name, aux_g, item.author.avg);
+          aux_s.push(new Song(item.name, aux_author, item.duration, aux_g, item.single, item.repro));
+        }
+      });
+      
+      aux_array.push(new Playlist(element.name, aux_s, element.user));
+    });
+    
+    return aux_array;
+  }
+```
+
+Aqui volvemos a tener el atributo **band** para comprobar quien es autor de las canciones de dentro de la playlist, asi pues si **band** existe para autor se tratara de un grupo el autor de la cancion si no el autor sera un artista en solitario.
+
+Para otras consultas sobre la clase, puede consultar el código completo en el siguiente link:  
+[-> playlist.ts](https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo_n/blob/main/src/Basic_class/playlist.ts)
+
+Por otro lado, tambien se realizaron pruebas sobre este código, para comprobar que los objetos instanciados son de la misma clase y para comprobar que se puede leer y modificar el atributo de la clase. Las pruebas pueden ser consuntadas en el siguiente enlace:  
+[-> Pruebas](https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo_n/blob/main/tests/Basic_Class/playlist.spec.ts)
 
 ## **3.2) DECLARACIONES, ESCRITURA Y LECTURA**
 ### **3.2.1) DATA**
+Este fichero cuenta con una declaracion de objetos de cada una de las clases que tenemos, es decir song, album,etc. Dicho asi en este fichero se encuentran todos eso objetos como si de una base de datos se tratara, para poder interactuar con todos los objetos desde cualquier fichero que llame a los atributos de este fichero.
+
+Para otras consultas sobre la clase, puede consultar el código completo en el siguiente link:  
+[-> data.ts](https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo_n/blob/main/src/Data/data.ts)
+
 ### **3.2.1) WRITE**
+El fichero write nos permitira almacena informacion dentro de un fichero JSON y se vera de la siguiente manera:
+
+```typescript
+export function Write(option: string, object: Album[]|Artist[]|Group[]|MusicGender[]|Song[]|Playlist[]) {
+  const ext: string = '.json';
+  const path: string = './database/';
+  const db: lowdb.LowdbSync<SchemaInterface> = lowdb(new FileSync(path + option + ext));
+  db.set(option, object).write();
+}
+```
+
+En la funcion principa del fichero write desarrollaremos el donde vamos a guardar el fichero json que se creara a travez de las variables **path**, **ext** y **option**, siendo **option** el nombre del fichero que se le pasa a la funcion, **path** la direccion donde se creara el fichero y **ext** siendo la extension .json, para realizar esto llamaremos a una funcion de **lowdb** que nos permitira crear ese fichero con un schema que nosotros hemos definido y que se ve de la siguiente manera: 
+
+```typescript
+export interface SchemaInterface {
+  album: AlbumInterface[],
+  artist: ArtistInterface[],
+  group: GroupInterface[],
+  musicGender: MusicGenderInterface[],
+  playlist: PlaylistInterface[],
+  song: SongInterface[]
+}
+```
+
+De esta manera se creara el fichero con la informacion distribuida con la informacion que es pasada a la funcion y que responde al `SchemaInterface`.
+
+Para otras consultas sobre la clase, puede consultar el código completo en el siguiente link:  
+[-> write.ts](https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo_n/blob/main/src/Data/write.ts)
+
 ### **3.2.1) READ**
+El fichero read nos permitira leer el fichero json creado para mantener los datos en la base de datos y se ve de la siguiente manera:
+
+```typescript
+export function ReadSong(): Song[] {
+
+  const db: lowdb.LowdbSync<SchemaInterface> = lowdb(new FileSync('./database/song.json'));
+  const serializedSongs = db.get('song').value();
+  
+  return Song.deserialize(serializedSongs);  
+}
+
+```
+
+La funcion lo que hace es recoger la informacion que se encuentre en el fichero .json que corresponda con el nombre indicado.
+
+El resto de funciones corresponden al resto de clases tambien, el unico cambio significativo entre una funcion y otra es el nombre dell fichero del cual recogen la informacion
+
+Para otras consultas sobre la clase, puede consultar el código completo en el siguiente link:  
+[-> read.ts](https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo_n/blob/main/src/Data/read.ts)
 
 ## **3.3) FUNCIONAMIENTO**
 
@@ -202,3 +342,9 @@ Por otro lado, tambien se realizaron pruebas sobre este código, para comprobar 
 ## **4) NOTAS SOBRE LA PRACTICA**
 
 ## **5) REFERENCIAS**
+Las referecias que hemos usado durante el desarrollo de la practica han sido: 
+[-> Github Gist dado por el profesor](https://gist.github.com/esegredo/50068c3b3a55dd1a5b02bb695562f7e3)
+[-> Github con ejemplos de lowdb](https://github.com/SBoudrias/Inquirer.js/blob/master/packages/inquirer/examples/pizza.js)
+[-> Página de lowdb del informe de la práctica](https://www.npmjs.com/package/lowdb)
+[-> Página de inquirer.js del informe de la práctica](https://www.npmjs.com/package/inquirer)
+[-> Página de stackoverflow](https://es.stackoverflow.com)
