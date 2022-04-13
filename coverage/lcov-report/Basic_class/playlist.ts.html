@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66% </span>
+                <span class="strong">67.92% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>33/50</span>
+                <span class='fraction'>36/53</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">77.27% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>15/20</span>
+                <span class='fraction'>17/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.39% </span>
+                <span class="strong">69.38% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>31/46</span>
+                <span class='fraction'>34/49</span>
             </div>
         
             
@@ -236,7 +236,26 @@
 <a name='L171'></a><a href='#L171'>171</a>
 <a name='L172'></a><a href='#L172'>172</a>
 <a name='L173'></a><a href='#L173'>173</a>
-<a name='L174'></a><a href='#L174'>174</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -254,7 +273,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -264,6 +285,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -421,7 +459,8 @@ export interface PlaylistInterface{
   name: string,
   songs: SongInterface[],
   duration: number,
-  genders: MusicGenderInterface[]
+  genders: MusicGenderInterface[],
+  user: string
 }
 &nbsp;
 /**
@@ -434,9 +473,11 @@ export class Playlist {
    * @param songs Canciones incluidas dentro de la playlist
    * @param duration Duración en segundos de la playlist
    * @param genders Generos que se incluyen dentro de la playlist
+   * @param user Nombre del usuario que ha creado la lista
    */
   constructor(protected name: string, protected songs: Song[], 
-              protected duration: number, protected genders: MusicGender[]) {
+              protected duration: number, protected genders: MusicGender[],
+              protected user: string) {
   }
 &nbsp;
   /**
@@ -472,6 +513,14 @@ export class Playlist {
   }
 &nbsp;
   /**
+   * Retorna el nombre del usuario que ha creado esta playlist
+   * @returns string
+   */
+  public getUser(): string {
+    return this.user;
+  }
+&nbsp;
+  /**
    * Setter del atributo name
    * @param name nuevo nombre
    */
@@ -501,6 +550,14 @@ export class Playlist {
    */
   setGenders(genders: MusicGender[]) {
     this.genders = genders;
+  }
+&nbsp;
+  /**
+   * Modifica el nombre del usuario creador de la playliost
+   * @param new_user nuevo nombre de usuario
+   */
+  setUser(new_user: string) {
+    this.user = new_user;
   }
 &nbsp;
   /**
@@ -577,7 +634,7 @@ export class Playlist {
         }
       });
       
-<span class="cstat-no" title="statement not covered" >      aux_array.push(new Playlist(element.name, aux_s, element.duration, aux_g));</span>
+<span class="cstat-no" title="statement not covered" >      aux_array.push(new Playlist(element.name, aux_s, element.duration, aux_g, element.user));</span>
     });
     
 <span class="cstat-no" title="statement not covered" >    return aux_array;</span>
@@ -589,7 +646,7 @@ export class Playlist {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Apr 13 2022 10:21:06 GMT+0000 (Coordinated Universal Time)
+                at Wed Apr 13 2022 15:01:56 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -163,7 +163,15 @@ export class Gestor {
    * Ordena las canciones de una playlist especifica por el nombre
    */
   sortSongByName(play: Playlist) {
-
+    let order: boolean = false;
+    inquirer.prompt({
+      type: 'list',
+      name: 'order',
+      message: 'Seleccione el orden: ',
+      choices: ["Ascendiente", "Descendiente"]
+    }).then(answes => {
+      //if()
+    });
   }
 
   /**
