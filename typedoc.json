@@ -1,11 +1,15 @@
 {
   "entryPoints": [
-    "src/album.ts",
-    "src/artist.ts",
-    "src/group.ts",
-    "src/music_gender.ts",
-    "src/playlist.ts",
-    "src/song.ts"
+    "src/Basic_class/album.ts",
+    "src/Basic_class/artist.ts",
+    "src/Basic_class/group.ts",
+    "src/Basic_class/music_gender.ts",
+    "src/Basic_class/playlist.ts",
+    "src/Basic_class/song.ts",
+    "src/Data/read.ts",
+    "src/Data/write.ts",
+    "src/Funcionality/funcionality.ts",
+    "src/Gestor/gestor.ts"
   ],
   "out": "./docs"
 }

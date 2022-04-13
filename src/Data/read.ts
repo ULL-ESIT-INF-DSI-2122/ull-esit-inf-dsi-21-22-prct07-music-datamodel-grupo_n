@@ -14,7 +14,7 @@ import { SchemaInterface } from './write';
 export function ReadSong(): Song[] {
 
   const db: lowdb.LowdbSync<SchemaInterface> = lowdb(new FileSync('./database/song.json'));
-  const serializedSongs = db.get("song").value();
+  const serializedSongs = db.get('song').value();
   
   return Song.deserialize(serializedSongs);  
 }
@@ -24,12 +24,10 @@ export function ReadSong(): Song[] {
  * @returns Album[]
  */
 export function ReadAlbum(): Album[] {
-  const db: lowdb.LowdbSync<SchemaInterface> = lowdb(new FileSync(".database/albums.json"));
+  const db: lowdb.LowdbSync<SchemaInterface> = lowdb(new FileSync("./database/albums.json"));
   const serializedOption = db.get('album').value();
-  
-  let myalbum: Album[] = Album.deserialize(serializedOption);
 
-  return myalbum;
+  return Album.deserialize(serializedOption);;
 }
 
 /**
@@ -39,10 +37,8 @@ export function ReadAlbum(): Album[] {
 export function ReadArtist(): Artist[] {
   const db: lowdb.LowdbSync<SchemaInterface> = lowdb(new FileSync('./database/artist.json'));
   const serializedOption = db.get('artist').value();
-  
-  let myartist: Artist[] = Artist.deserialize(serializedOption);
 
-  return myartist;
+  return Artist.deserialize(serializedOption);
 }
 
 /**
@@ -53,9 +49,7 @@ export function ReadGroup(): Group[] {
   const db: lowdb.LowdbSync<SchemaInterface> = lowdb(new FileSync('./database/group.json'));
   const serializedGroup = db.get('group').value();
   
-  let mygroup: Group[] = Group.deserialize(serializedGroup);
-  
-  return mygroup;
+  return Group.deserialize(serializedGroup);
 }
 
 /**
@@ -64,11 +58,9 @@ export function ReadGroup(): Group[] {
  */
 export function ReadMusicGender(): MusicGender[] {
   const db: lowdb.LowdbSync<SchemaInterface> = lowdb(new FileSync("./database/genders.json"));
-  const serializedOption = db.get('musicGender').value();
-  
-  let myGender: MusicGender[] = MusicGender.deserialize(serializedOption);
+  const serializedOption = db.get('genders').value();
 
-  return myGender;
+  return MusicGender.deserialize(serializedOption);
 }
 
 /**
@@ -79,7 +71,5 @@ export function ReadPlaylsit(): Playlist[] {
   const db: lowdb.LowdbSync<SchemaInterface> = lowdb(new FileSync('./database/playlist.json'));
   const serializedOption = db.get('playlist').value();
 
-  let myPlaylist: Playlist[] = Playlist.deserialize(serializedOption);
-
-  return myPlaylist;
+  return Playlist.deserialize(serializedOption);
 }

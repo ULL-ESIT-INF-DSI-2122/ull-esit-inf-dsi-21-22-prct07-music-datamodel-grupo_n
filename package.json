@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha",
     "doc": "typedoc",
-    "start": "tsc-watch --onSuccess \"node dist/Data/read.js\"",
+    "start": "tsc-watch --onSuccess \"node dist/Funcionality/funcionality.js\"",
     "coverage": "nyc npm test && nyc report --reporter=lcov"
   },
   "keywords": [],

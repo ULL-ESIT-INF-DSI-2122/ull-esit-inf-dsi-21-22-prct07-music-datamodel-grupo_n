@@ -1,6 +1,53 @@
 {
   "group": [
     {
+      "name": "Disturbed",
+      "band": [
+        {
+          "name": "David Draiman",
+          "genders": [
+            {
+              "gender": "Heavy Metal"
+            }
+          ],
+          "avg_monthly": 539048
+        },
+        {
+          "name": "John Moyer",
+          "genders": [
+            {
+              "gender": "Heavy Metal"
+            }
+          ],
+          "avg_monthly": 0
+        },
+        {
+          "name": "Mike Wengren",
+          "genders": [
+            {
+              "gender": "Heavy Metal"
+            }
+          ],
+          "avg_monthly": 112
+        },
+        {
+          "name": "Dan Donegan",
+          "genders": [
+            {
+              "gender": "Heavy Metal"
+            }
+          ],
+          "avg_monthly": 0
+        }
+      ],
+      "genders": [
+        {
+          "gender": "Heavy Metal"
+        }
+      ],
+      "avg_monthly": "852852852"
+    },
+    {
       "name": "Fito y Fitipaldis",
       "band": [
         {

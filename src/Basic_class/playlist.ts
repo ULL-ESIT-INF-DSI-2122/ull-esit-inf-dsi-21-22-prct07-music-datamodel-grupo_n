@@ -10,7 +10,8 @@ export interface PlaylistInterface{
   name: string,
   songs: SongInterface[],
   duration: number,
-  genders: MusicGenderInterface[]
+  genders: MusicGenderInterface[],
+  user: string
 }
 
 /**
@@ -23,9 +24,11 @@ export class Playlist {
    * @param songs Canciones incluidas dentro de la playlist
    * @param duration Duración en segundos de la playlist
    * @param genders Generos que se incluyen dentro de la playlist
+   * @param user Nombre del usuario que ha creado la lista
    */
   constructor(protected name: string, protected songs: Song[], 
-              protected duration: number, protected genders: MusicGender[]) {
+              protected duration: number, protected genders: MusicGender[],
+              protected user: string) {
   }
 
   /**
@@ -61,6 +64,14 @@ export class Playlist {
   }
 
   /**
+   * Retorna el nombre del usuario que ha creado esta playlist
+   * @returns string
+   */
+  public getUser(): string {
+    return this.user;
+  }
+
+  /**
    * Setter del atributo name
    * @param name nuevo nombre
    */
@@ -90,6 +101,14 @@ export class Playlist {
    */
   setGenders(genders: MusicGender[]) {
     this.genders = genders;
+  }
+
+  /**
+   * Modifica el nombre del usuario creador de la playliost
+   * @param new_user nuevo nombre de usuario
+   */
+  setUser(new_user: string) {
+    this.user = new_user;
   }
 
   /**
@@ -166,7 +185,7 @@ export class Playlist {
         }
       });
       
-      aux_array.push(new Playlist(element.name, aux_s, element.duration, aux_g));
+      aux_array.push(new Playlist(element.name, aux_s, element.duration, aux_g, element.user));
     });
     
     return aux_array;

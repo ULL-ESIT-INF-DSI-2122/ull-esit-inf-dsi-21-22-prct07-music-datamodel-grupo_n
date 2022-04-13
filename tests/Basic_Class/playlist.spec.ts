@@ -37,6 +37,12 @@ describe('Comprobacion de los atributos de Playlist', () => {
     data.Mix.setGenders([data.Pop, data.Bachata, data.Ost, data.Rap]);
   });
 
+  it('Getter y Setter del usuario que ha creado la Playlist', () => {
+    data.Mix.setUser('Jonay');
+    expect(data.Mix.getUser()).to.be.eql('Jonay');
+    data.Mix.setUser('Admin');
+  });
+
   it('Añadir canciones a la lista', () => {
     expect(data.Heavy_ESP.addSong(data.vacaciones_pagadas)).to.be.true;
   });

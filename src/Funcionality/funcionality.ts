@@ -4,10 +4,8 @@ import { Album } from '../Basic_class/album';
 import { Artist } from '../Basic_class/artist';
 import { Group } from '../Basic_class/group';
 import { MusicGender } from '../Basic_class/music_gender';
-import { Playlist } from '../Basic_class/playlist';
 import { Song } from '../Basic_class/song';
-import { SchemaInterface } from '../Data/write';
-//import * as read from '../Data/read';
+import * as read from '../Data/read';
 import * as data from '../Data/data';
 import * as write from '../Data/write';
 
@@ -18,7 +16,8 @@ enum Options {
   songs = "Canciones",
   artist = "Artistas",
   group = "Grupos",
-  albums = "Albumes"
+  albums = "Albumes",
+  gender = "Generos"
 }
 
 /**
@@ -43,6 +42,27 @@ enum optionsSong {
   repro = "Reproducciones"
 }
 
+enum optionsArtist {
+  name = "Nombre",
+  genders = "Genero",
+  avg_m = "Reproducciones"
+}
+
+enum optionGroups {
+  name = "Nombre",
+  band = "Integrantes",
+  genders = "Genero",
+  avg_m = "Reproducciones"
+}
+
+enum optionsAlbum {
+  name = "Nombre",
+  year = "Año de lanzamiento",
+  genders = "Genero",
+  songs = "Canciones"
+}
+
+
 /**
  * Funcionamiento de la practica dada, interaccion y busqueda por filtros de canciones, albums, artistas, grupos y generos musicales
  */
@@ -58,11 +78,11 @@ class Funcionality {
   constructor(private songs: Song[] = [], private artist: Artist[] = [],
               private groups: Group[] = [], private albums: Album[] = [],
               private gender: MusicGender[] = []){   
-    this.songs = data.All_Songs
-    this.artist = data.All_artist;
-    this.groups = data.All_Group;
-    this.albums = data.All_Albums;
-    this.gender = data.All_Genders;
+    this.songs =  data.All_Songs;          //read.ReadSong();
+    this.gender = data.All_Genders;        //read.ReadMusicGender();
+    this.artist = data.All_artist;         //read.ReadArtist();
+    this.albums = data.All_Albums;         //read.ReadAlbum();
+    this.groups = data.All_Group;          //read.ReadGroup();
   }
 
   /**
@@ -73,29 +93,48 @@ class Funcionality {
     console.clear();
     inquirer.prompt({
       type: "list",
-      name: "action",
-      message: "Bienvenido a la biblioteca musical ¿Qué desea consultar?",
-      choices: Object.values(Options)
-
+      name: "default",
+      message: "Bienvenido a la biblioteca musical. ¿Desea iniciar una biblioteca por defecto?",
+      choices: ["Sí", "No"]
     }).then(answers => {
-      switch (answers["action"]) {
-        case Options.songs:
-          this.optionSongs();
-          break;
-
-        case Options.artist:
-          this.optionArtist();
-          break;
-
-        case Options.group:
-          this.optionGroup();
-          break;
-
-        case Options.albums:
-          this.optionAlbums();
-          break;        
-      }
+      if (answers.default == "Sí") {
+        this.songs = data.All_Songs;
+        this.artist = data.All_artist;
+        this.groups = data.All_Group;
+        this.albums = data.All_Albums;
+        this.gender = data.All_Genders;
+      } 
+      inquirer.prompt({
+        type: "list",
+        name: "action",
+        message: "¿Qué datos de la biblioteca desea consultar?",
+        choices: Object.values(Options)
+  
+      }).then(answers => {
+        switch (answers["action"]) {
+          case Options.songs:
+            this.optionSongs();
+            break;
+  
+          case Options.artist:
+            this.optionArtist();
+            break;
+  
+          case Options.group:
+            this.optionGroup();
+            break;
+  
+          case Options.albums:
+            this.optionAlbums();
+            break; 
+          
+          case Options.gender:
+            this.optionGender();
+            break;
+        }
+      });
     });
+   
   }
 
   /**
@@ -221,6 +260,7 @@ class Funcionality {
       name: "nombre",
       message: "Introduzca nombre del grupo: "
     }).then(answers => {
+      name = answers.nombre;
       inquirer.prompt({
         type: "input",
         name: "genero",
@@ -231,12 +271,33 @@ class Funcionality {
         aux_vec.forEach((item) => {
           this.gender.forEach((item2) => {
             if (item == item2.getMusicGender()) {
-              genders.push(new MusicGender(item));
+              genders.push(item2);
             }
           });
         });
+        inquirer.prompt({
+          type: "input",
+          name: "band",
+          message: "Introduzca los artistas del grupo (separados por coma + espacio): "
+        }).then(answers => {
+          let aux_string2: string = answers.band;
+          let aux_vec2: string[] = aux_string2.split(", ", aux_string2.length); 
+          aux_vec2.forEach((item2) => {
+            band.push(this.findArtist(item2));
+          });
+          inquirer.prompt({
+            type: "input",
+            name: "avg",
+            message: "Introduzca las reproducciones mensuales del grupo: "
+          }).then(answers => {
+            avg_m = answers.avg;
+            this.groups.push(new Group(name, band, genders, avg_m));
+            console.log("Se ha añadido correctamente el grupo");
+            write.Write("group", this.groups);
+            this.sortGroups();
+          });
 
-
+        });
       });
     });
   }
@@ -246,15 +307,74 @@ class Funcionality {
    */
   addAlbum() {
     let name: string = '';
-    
+    let year: number = 0;
+    let genders: MusicGender[] = [];
+    let album_songs: Song[] = [];
+
+    inquirer.prompt({
+      type: "input",
+      name: "name",
+      message: "Introduzca el nombre del nuevo album: "
+    }).then(answers => {
+      name = answers.name;
+      inquirer.prompt({
+        type: "input",
+        name: "year",
+        message: "Introduzca el año de lanzamiento del nuevo album: "
+      }).then(answers => {
+        year = answers.year;
+        inquirer.prompt({
+          type: "input",
+          name: "genders",
+          message: "Introduzca el genero del album (si son varios sepárelos por coma + espacio): "
+        }).then(answers => {
+          let aux_string: string = answers.genders;
+          let aux_vec: string[] = aux_string.split(", ", aux_string.length);
+          aux_vec.forEach((item) => {
+            this.gender.forEach((item2) => {
+              if (item == item2.getMusicGender()) {
+                genders.push(item2);
+              }
+            });
+          });
+          inquirer.prompt({
+            type: "input",
+            name: "songs",
+            message: "Introduzca las canciones del album separadas por coma + espacio: "
+          }).then(answers => {
+            let aux_answer: string = answers.songs;
+            let aux_songs: string[] = aux_answer.split(", ", aux_answer.length);
+            aux_songs.forEach((item) => {
+              this.songs.forEach((element) => {
+                if (item == element.getName()) {
+                  album_songs.push(element);
+                }
+              });
+            });
+            this.albums.push(new Album(name, year, genders, album_songs));
+            console.log("Se ha añadido correctamente el album");
+            write.Write("albums", this.albums);
+            this.sortAlbums();
+          });
+        });
+      });
+    });
   }
   
   /**
    * Funcion que utiliza la interaccion con el usuario para añadir un nuevo genero musical a la base de datos
    */
   addGender() {
-    let aux: string = "";
-    
+    inquirer.prompt({
+      type: "input",
+      name: "gender",
+      message: "Introduzca el nombre del nuevo género: "
+    }).then(answers => {
+      this.gender.push(new MusicGender(answers.gender));
+      console.log("Se ha añadido correctamente el género");
+      write.Write("genders", this.gender);
+      this.sortGender();
+    });
   }
 
   /**
@@ -358,7 +478,7 @@ class Funcionality {
 
       if(del) {
         console.log("Se ha eliminado correctamente la canción");
-        write.Write("song",this.songs);
+        write.Write("song", this.songs);
       } else {
         console.log("La cancion que ha ingresado no existe en la base de datos");
       }
@@ -420,7 +540,7 @@ class Funcionality {
 
       if(del) {
         console.log("Se ha eliminado correctamente el grupo");
-        write.Write("group",this.groups);
+        write.Write("group", this.groups);
       } else {
         console.log("El grupo que ha ingresado no existe en la base de datos");
       }
@@ -451,9 +571,36 @@ class Funcionality {
 
       if(del) {
         console.log("Se ha eliminado correctamente el album");
-        write.Write("albums",this.albums);
+        write.Write("albums", this.albums);
       } else {
         console.log("El album que ha ingresado no existe en la base de datos");
+      }
+    });
+  }
+
+  /**
+   * Funcion que nos permite eliminar generos de la base de datos
+   */
+  deleteGender() {
+    let del: boolean = false;
+
+    inquirer.prompt({ 
+      type: "input", 
+      name: "name",
+      message: "Introduzca el nombre del genero a eliminar: "
+    }).then(answers => {  
+      this.gender.forEach((item, index) => {
+        if (item.getMusicGender() == answers.name) {
+          this.gender.splice(index, 1);
+          del = true;
+        }
+      });
+
+      if(del) {
+        console.log("Se ha eliminado correctamente el genero");
+        write.Write("genders", this.gender);
+      } else {
+        console.log("El genero que ha ingresado no existe en la base de datos");
       }
     });
   }
@@ -472,6 +619,11 @@ class Funcionality {
     }).then(answers => {
       find_name = answers.edit;
       aux_song = this.findSong(find_name);
+      if (aux_song != undefined) {
+        console.log("[ Se encontró la canción a editar... ]");
+      } else {
+        console.log("No se pudo encontrar la canción");
+      }
       inquirer.prompt({
         type: "list",
         name: "edit2",
@@ -483,7 +635,7 @@ class Funcionality {
             inquirer.prompt({
               type: "input",
               name: "nombre",
-              message: "Indique el nuevo nombre: ",
+              message: "Indique el nuevo nombre de la canción: ",
             }).then(answers => {
               this.songs.forEach((item) => {if(item.getName() == find_name) item.setName(answers.nombre)});
               //aux_song.setName(answers.nombre);
@@ -526,7 +678,7 @@ class Funcionality {
             });
             break;
 
-          case optionsSong.gender:
+          case optionsSong.gender: 
             inquirer.prompt({
               type: "input",
               name: "gender",
@@ -588,21 +740,354 @@ class Funcionality {
    * Funcion que permite al usuario editar un artista de la base de datos
    */
   editArtist() {
+    let artist_name: string;
+    let aux_artist: Artist;
+    let genders: MusicGender[] = [];
 
+    inquirer.prompt({
+      type: "input",
+      name: "artist",
+      message: "Indique el artista que desea editar: "
+    }).then(answers => {
+      artist_name = answers.artist;
+      aux_artist = this.findArtist(artist_name);
+      if (aux_artist != undefined) {
+        console.log("[ Se encontró el artista a editar... ]");
+      } else {
+        console.log("No se pudo encontrar al artista");
+      }
+      inquirer.prompt({
+        type: "list",
+        name: "options",
+        message: "¿Qué desea cambiar del artista?: ",
+        choices: Object.values(optionsArtist)
+      }).then(answers => {
+        switch (answers["options"]) {
+          case optionsArtist.name:
+            inquirer.prompt({
+              type: "input",
+              name: "nombre",
+              message: "Indique el nuevo nombre del artista: ",
+            }).then(answers => {
+              this.artist.forEach((item) => {
+                if(item.getName() == artist_name) 
+                  item.setName(answers.nombre)
+              });
+              console.log("Se ha editado el nombre del artista correctamente");
+              write.Write("artist", this.artist);
+              this.sortArtist();
+            });
+            break;
+
+          case optionsArtist.genders:
+            inquirer.prompt({
+              type: "input",
+              name: "genders",
+              message: "Indique el nuevo género del artista (si son varios sepárelos por coma + espacio): ",
+            }).then(answers => {
+              let genders_string: string = answers.genders;
+              let genders_vec: string[] = genders_string.split(", ", genders_string.length);
+              genders_vec.forEach((item) => {
+                this.gender.forEach((item2) => {
+                  if (item == item2.getMusicGender()) {
+                    genders.push(item2);
+                  }
+                });
+              });
+              this.artist.forEach((item) => {
+                if(item.getName() == artist_name) 
+                  item.setGenders(genders);
+              });
+              console.log("Se ha editado los generos del artista correctamente");
+              write.Write("artist", this.artist);
+              this.sortArtist();
+            });
+            break;
+
+          case optionsArtist.avg_m:
+            inquirer.prompt({
+              type: "input",
+              name: "avg",
+              message: "Indique el nuevo numero de reproducciones del artista: ",
+            }).then(answers => {
+              this.artist.forEach((item) => {
+                if(item.getName() == artist_name) 
+                  item.setAvg_Monthly(answers.avg)
+              });
+              console.log("Se han editado las reproducciones del artista correctamente");
+              write.Write("artist", this.artist);
+              this.sortArtist();
+            });
+            break;      
+        }
+      });
+    });
   }
   
   /**
    * Funcion que permite el usuario editar un grupo musical de la base de datos
    */
   editGroup() {
+    let group_name: string;
+    let aux_group: Group;
+    let genders: MusicGender[] = [];
+    let members: Artist[] = [];
 
+    inquirer.prompt({
+      type: "input",
+      name: "group",
+      message: "Indique el grupo que desea editar: "
+    }).then(answers => {
+      group_name = answers.group;
+      aux_group = this.findGroup(group_name);
+      if (aux_group != undefined) {
+        console.log("[ Se encontró el grupo a editar... ]");
+      } else {
+        console.log("No se pudo encontrar el grupo");
+      }
+      inquirer.prompt({
+        type: "list",
+        name: "options",
+        message: "¿Qué desea cambiar del grupo?: ",
+        choices: Object.values(optionGroups)
+      }).then(answers => {
+        switch (answers["options"]) {
+          case optionGroups.name:
+            inquirer.prompt({
+              type: "input",
+              name: "nombre",
+              message: "Indique el nuevo nombre del grupo: ",
+            }).then(answers => {
+              this.groups.forEach((item) => {
+                if(item.getName() == group_name) 
+                  item.setName(answers.nombre)
+              });
+              console.log("Se ha editado el nombre del grupo correctamente");
+              write.Write("group", this.groups);
+              this.sortGroups();
+            });
+            break;
+
+          case optionGroups.band:
+            inquirer.prompt({
+              type: "input",
+              name: "members",
+              message: "Indique los nuevos integrantes del grupo (si son varios sepárelos por coma + espacio): ",
+            }).then(answers => {
+              let members_string: string = answers.members;
+              let members_vec: string[] = members_string.split(", ", members_string.length);
+              members_vec.forEach((item) => {
+                this.artist.forEach((item2) => {
+                  if (item == item2.getName()) {
+                    members.push(item2);
+                  }
+                });
+              });
+              this.groups.forEach((item) => {
+                if(item.getName() == group_name) 
+                  item.setBand(members);
+              });
+              console.log("Se ha editado los generos del grupo correctamente");
+              write.Write("group", this.groups);
+              this.sortGroups();
+            });
+            break;
+
+          case optionGroups.genders:
+            inquirer.prompt({
+              type: "input",
+              name: "genders",
+              message: "Indique el nuevo género del grupo (si son varios sepárelos por coma + espacio): ",
+            }).then(answers => {
+              let genders_string: string = answers.genders;
+              let genders_vec: string[] = genders_string.split(", ", genders_string.length);
+              genders_vec.forEach((item) => {
+                this.gender.forEach((item2) => {
+                  if (item == item2.getMusicGender()) {
+                    genders.push(item2);
+                  }
+                });
+              });
+              this.groups.forEach((item) => {
+                if(item.getName() == group_name) 
+                  item.setGender(genders);
+              });
+              console.log("Se ha editado los generos del grupo correctamente");
+              write.Write("group", this.groups);
+              this.sortGroups();
+            });
+            break;
+
+          case optionGroups.avg_m:
+            inquirer.prompt({
+              type: "input",
+              name: "avg",
+              message: "Indique el nuevo numero de reproducciones del grupo: ",
+            }).then(answers => {
+              this.groups.forEach((item) => {
+                if(item.getName() == group_name) 
+                  item.setAvgMonthy(answers.avg)
+              });
+              console.log("Se han editado las reproducciones del grupo correctamente");
+              write.Write("group", this.groups);
+              this.sortGroups();
+            });
+            break;
+          
+        }
+       
+      });
+    });
   }
 
   /**
    * Funcion que permite editar un album de la base de datos
    */
-  editAlbum(){
+  editAlbum() {
+    // name, year, genders, songs
+    let album_name: string;
+    let aux_album: Group;
+    let genders: MusicGender[] = [];
+    let songs: Song[] = [];
 
+    inquirer.prompt({
+      type: "input",
+      name: "album",
+      message: "Indique el album que desea editar: ",
+    }).then(answers => {
+      album_name = answers.album;
+      aux_album = this.findGroup(album_name);
+      if (aux_album != undefined) {
+        console.log("[ Se encontró el album a editar... ]");
+      } else {
+        console.log("No se pudo encontrar el album");
+      }
+      inquirer.prompt({
+        type: "list",
+        name: "options",
+        message: "¿Qué desea cambiar del album?: ",
+        choices: Object.values(optionsAlbum)
+      }).then(answers => {
+        switch (answers["options"]) {
+          case optionsAlbum.name:
+            inquirer.prompt({
+              type: "input",
+              name: "nombre",
+              message: "Indique el nuevo nombre del album: ",
+            }).then(answers => {
+              this.albums.forEach((item) => {
+                if(item.getName() == album_name) 
+                  item.setName(answers.nombre)
+              });
+              console.log("Se ha editado el nombre del album correctamente");
+              write.Write("albums", this.albums);
+              this.sortAlbums();
+            });
+            break;
+
+          case optionsAlbum.year:
+            inquirer.prompt({
+              type: "input",
+              name: "year",
+              message: "Indique el nuevo año de lanzamiento del album: ",
+            }).then(answers => {
+              this.albums.forEach((item) => {
+                if(item.getName() == album_name) 
+                  item.setYear(answers.year)
+              });
+              console.log("Se han editado el año de lanzamiento del album correctamente");
+              write.Write("albums", this.albums);
+              this.sortAlbums();
+            });
+            break;
+        
+          case optionsAlbum.genders:
+            inquirer.prompt({
+              type: "input",
+              name: "genders",
+              message: "Indique el nuevo géneros del album (si son varios sepárelos por coma + espacio): ",
+            }).then(answers => {
+              let genders_string: string = answers.genders;
+              let genders_vec: string[] = genders_string.split(", ", genders_string.length);
+              genders_vec.forEach((item) => {
+                this.gender.forEach((item2) => {
+                  if (item == item2.getMusicGender()) {
+                    genders.push(item2);
+                  }
+                });
+              });
+              this.albums.forEach((item) => {
+                if(item.getName() == album_name) 
+                  item.setGender(genders);
+              });
+              console.log("Se ha editado los generos del album correctamente");
+              write.Write("albums", this.albums);
+              this.sortAlbums();
+            });
+            break;
+
+          case optionsAlbum.songs:
+            inquirer.prompt({
+              type: "input",
+              name: "songs",
+              message: "Indique las nuevas canciones del album (si son varios sepárelos por coma + espacio): ",
+            }).then(answers => {
+              let songs_string: string = answers.songs;
+              let songs_vec: string[] = songs_string.split(", ", songs_string.length);
+              songs_vec.forEach((item) => {
+                this.songs.forEach((item2) => {
+                  if (item == item2.getName()) {
+                    songs.push(item2);
+                  }
+                });
+              });
+              this.albums.forEach((item) => {
+                if(item.getName() == album_name) 
+                  item.setAlbumSongs(songs);
+              });
+              console.log("Se ha editado las canciones del album correctamente");
+              write.Write("albums", this.albums);
+              this.sortAlbums();
+            });
+            break;
+        }
+      });
+    });
+  }
+
+  /**
+   * Funcion que permite editar los generos de la base de datos
+   */
+  editGender() {
+    let gender_name: string;
+    let aux_gender: MusicGender;
+
+    inquirer.prompt({
+      type: "input",
+      name: "gender",
+      message: "Indique el genero que desea editar: "
+    }).then(answers => {
+      gender_name = answers.gender;
+      aux_gender = this.findGender(gender_name);
+      if (aux_gender != undefined) {
+        console.log("[ Se encontró el genero a editar... ]");
+      } else {
+        console.log("No se pudo encontrar el genero");
+      }
+      inquirer.prompt({
+        type: "input",
+        name: "gendername",
+        message: "Indique el nuevo nombre del genero: "
+      }).then(answers => {
+        this.gender.forEach((item) => {
+          if(item.getMusicGender() == gender_name) 
+            item.setMusicGender(answers.gendername);
+        });
+        console.log("Se ha editado el nombre del genero correctamente");
+        write.Write("genders", this.gender);
+        this.sortGender();
+      });
+    });
   }
 
   /**
@@ -647,7 +1132,44 @@ class Funcionality {
    * Ordena y muestra ordenado las albums
    */
   sortAlbums() {
-    
+    //hay que preguntar si quiere hacer sort por nombre o por año de lanzamiento
+    let order: boolean = false; // True = ascendiente, False = descendiente
+    inquirer.prompt({
+      type: "list",
+      name: "order",
+      message: "¿En que orden quiere ver la lista de albumes?: ",
+      choices: ["Ascendiente", "Descendiente"]
+    }).then(answers => {
+      if (answers.order == "Ascendiente") {
+        order = true;
+      } else {
+        order = false;
+      }
+      inquirer.prompt({ 
+        type: "list",
+        name: "sort",
+        message: "¿Cómo desea organizar los albumes?: ",
+        choices: ["Por nombre", "Por año de lanzamiento"]
+      }).then(answers => {
+        if (answers.sort == "Por nombre") {
+          if (order) { // Ascendiente
+            this.albums.sort((a, b) => a.getName() < b.getName() ? -1 : 1);
+          } else { // Descendiente
+            this.albums.sort((a, b) => a.getName() > b.getName() ? -1 : 1);
+          }
+        } else {
+          if (order) { // Ascendiente
+            this.albums.sort((a, b) => a.getYear() < b.getYear() ? -1 : 1);
+          } else { // Descendiente
+            this.albums.sort((a, b) => a.getYear() > b.getYear() ? -1 : 1);
+          }
+        }
+
+        this.albums.forEach((item) => {
+          console.log(`-> ${item.getName()} ( ${item.getYear()} ) `);
+        });
+      });
+    });
   }
 
   /**
@@ -672,13 +1194,58 @@ class Funcionality {
       });
 
       printable_string = item.getName();
-      printable_string += " - ";
+      printable_string += " - "; 
       
-      printable_genders.forEach((item3) => {
+      printable_genders.forEach((item3) => {  
         printable_string += item3;
+        printable_string += ' ';
       });
       
       console.log(`${printable_string}`);
+    });
+  }
+
+  /**
+   * Ordena y muestra con la ordenacion de grupos 
+   */
+  sortGroups() {
+    this.groups.sort((a, b) => a.getName() < b.getName() ? -1 : 1);
+
+    let genders: MusicGender[] = [];
+    let printable_genders: string[] = [];
+    let printable_string: string = "";
+
+    this.groups.forEach((item) => {
+      genders = [];
+      printable_genders = [];
+      printable_string = "";
+
+      genders = item.getGender();
+      
+      genders.forEach((element) => {
+        printable_genders.push(element.getMusicGender());
+      });
+
+      printable_string = item.getName();
+      printable_string += " - ";
+
+      printable_genders.forEach((element) => {
+        printable_string += element;
+        printable_string += " ";
+      });
+
+      console.log(`${printable_string}`);
+    });
+  }
+
+  /**
+   * Funcion que nos permite ordenar los generos musicales de la base de datos
+   */
+  sortGender() {
+    this.gender.sort((a, b) => a.getMusicGender() < b.getMusicGender() ? -1 : 1);
+
+    this.gender.forEach((item) => {
+      console.log(`${item.getMusicGender()}`);
     });
   }
   
@@ -723,7 +1290,7 @@ class Funcionality {
     inquirer.prompt({
       type: "list",
       name: "artist",
-      message: "Seleccione la acción que desea aplicar a la lista de canciones: ",
+      message: "Seleccione la acción que desea aplicar a los artistas: ",
       choices: Object.values(changes)
 
     }).then(answers => {
@@ -756,7 +1323,7 @@ class Funcionality {
     inquirer.prompt({
       type: "list",
       name: "group",
-      message: "Seleccione la acción que desea aplicar a la lista de canciones: ",
+      message: "Seleccione la acción que desea aplicar a los grupos: ",
       choices: Object.values(changes)
 
     }).then(answers => {
@@ -770,11 +1337,11 @@ class Funcionality {
           break;
 
         case changes.edit:
-          this.editGroup();
+          this.editGroup(); 
           break;
 
         case changes.show:
-          //this.sortGroup();
+          this.sortGroups();
           break;        
       }
 
@@ -789,7 +1356,7 @@ class Funcionality {
     inquirer.prompt({
       type: "list",
       name: "albums",
-      message: "Seleccione la acción que desea aplicar a la lista de canciones: ",
+      message: "Seleccione la acción que desea aplicar a los albumes: ",
       choices: Object.values(changes)
 
     }).then(answers => {
@@ -803,7 +1370,7 @@ class Funcionality {
           break;
 
         case changes.edit:
-          //this.editAlbum();
+          this.editAlbum();
           break;
 
         case changes.show:
@@ -814,6 +1381,34 @@ class Funcionality {
     });
   }
 
+  optionGender() {
+    console.clear();
+    inquirer.prompt({
+      type: "list",
+      name: "genders",
+      message: "Seleccione la acción que desea aplicar a los géneros: ",
+      choices: Object.values(changes)
+
+    }).then(answers => {
+      switch (answers["genders"]) {
+        case changes.add:
+          this.addGender();  
+          break;
+
+        case changes.delete:
+          this.deleteGender();
+          break;
+
+        case changes.edit:
+          this.editGender();
+          break;
+
+        case changes.show:
+          this.sortGender();
+          break;        
+      }
+
+    });
+  }
+
 }
-let funct: Funcionality = new Funcionality();
-funct.start();
