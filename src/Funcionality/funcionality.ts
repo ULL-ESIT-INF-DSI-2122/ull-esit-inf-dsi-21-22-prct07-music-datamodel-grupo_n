@@ -248,6 +248,7 @@ class Funcionality {
     let name: string = '';
     
   }
+  
   /**
    * Funcion que utiliza la interaccion con el usuario para añadir un nuevo genero musical a la base de datos
    */
