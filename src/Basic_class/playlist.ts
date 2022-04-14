@@ -118,14 +118,6 @@ export class Playlist {
   }
 
   /**
-   * Setter del atributo duration
-   * @param duration nueva duracion de la playlist
-   */
-  setDuration(duration: number) {
-    this.duration = duration;
-  }
-
-  /**
    * Modifica el nombre del usuario creador de la playliost
    * @param new_user nuevo nombre de usuario
    */
@@ -176,9 +168,10 @@ export class Playlist {
     let aux: number = this.genders.length;
     this.genders.forEach((item, index) => {
       if(item.getMusicGender() == gender) {
-        this.getGenders().splice(index, 1);
+        this.genders.splice(index, 1);
       }
     });
+
     return(aux != this.genders.length);
   }
   

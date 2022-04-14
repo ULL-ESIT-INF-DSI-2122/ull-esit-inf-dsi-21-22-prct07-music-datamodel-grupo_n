@@ -25,16 +25,8 @@ describe('Comprobacion de los atributos de Playlist', () => {
     data.Ryblues.setSongs([data.Industry_Baby, data.Montero, data.Sun_Goes_Down, data.Old_Town_Road, data.Holiday, data.Smile, data.Sunset, data.Superstition, data.So_what_the_fuss, data.Frankye_and_Johnny]);
   });
 
-  it('Getter y Setter de la duracion de la lista', () => {
-    data.K_Electro.setDuration(560);
-    expect(data.K_Electro.getDuration()).to.be.eql(560);
-    data.K_Electro.setDuration(2078);
-  });
-
-  it('Getter y Setter de los generos de la lista', () => {
-    data.Mix.setGenders([data.Kpop, data.Rock_Esp]);
-    expect(data.Mix.getGenders()).to.be.eql([data.Kpop, data.Rock_Esp]);
-    data.Mix.setGenders([data.Pop, data.Bachata, data.Ost, data.Rap]);
+  it('Se puede calcular la duración de la playlist', () => {
+    expect(data.K_Electro.getDuration()).to.be.eql(2078);
   });
 
   it('Getter y Setter del usuario que ha creado la Playlist', () => {
@@ -52,6 +44,7 @@ describe('Comprobacion de los atributos de Playlist', () => {
   });
 
   it('Añadir generos a la lista', () => {
+    data.K_Electro.getGenders();
     expect(data.K_Electro.addGender(data.RyB)).to.be.true;
   });
 
