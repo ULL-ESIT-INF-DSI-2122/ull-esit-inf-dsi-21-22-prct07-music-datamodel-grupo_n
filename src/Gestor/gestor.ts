@@ -138,10 +138,10 @@ export class Gestor {
           case Sort.repro:
               this.sortSongByRepro(aux_pl);
             break;
-          }
-        });
+        }
       });
-    }
+    });
+  }
 
   /**
    * Ordena las canciones de una playlist especifica por el nombre

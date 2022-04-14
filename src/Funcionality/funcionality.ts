@@ -1410,5 +1410,4 @@ class Funcionality {
 
     });
   }
-
 }
