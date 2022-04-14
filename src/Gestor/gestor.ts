@@ -309,39 +309,6 @@ export class Gestor {
         this.viewAllPlaylist();
       });
     });
-
-    // inquirer.prompt({
-    //   type: "input",
-    //   name: "user",
-    //   message: "Indique su nombre de usuario: "
-    // }).then(answers => {
-    //   user = answers.user;
-    //   inquirer.prompt({
-    //     type: "input",
-    //     name: "name",
-    //     message: "Indique el nombre de la playlist: "
-    //   }).then(answers => {
-    //     name = answers.name;
-    //     inquirer.prompt({
-    //       type: "input",
-    //       name: "songs",
-    //       message: "Indique las canciones de la playlist separadas por coma + espacio: "
-    //     }).then(answers => {
-    //       let aux_songs: string = answers.songs;
-    //       let songs_vec: string[] = aux_songs.split(", ", aux_songs.length);
-    //       songs_vec.forEach((item) => {
-    //         this.songs.forEach((item2) => {
-    //           if (item == item2.getName()) {
-    //             songs.push(item2);
-    //           }
-    //         });
-    //       });
-    //       this.playlists.push(new Playlist(name, songs, user));
-    //       write.Write("playlist", this.playlists);
-    //       this.viewAllPlaylist();
-    //     });
-    //   });
-    // });
   }
   
   /**
@@ -377,34 +344,6 @@ export class Gestor {
     });
     
     write.Write('playlist', this.playlists);
-
-    // inquirer.prompt({
-    //   type: "input",
-    //   name: "user",
-    //   message: "Indique su nombre de usuario: "
-    // }).then(answers => {
-    //   user = answers.user; 
-    //   inquirer.prompt({
-    //     type: "input",
-    //     name: "playlist",
-    //     message: "Indique el nombre de la playlist a eliminar: "
-    //   }).then(answers => {
-    //     this.playlists.forEach((element, index) => {
-    //       if (element.getName() == answers.playlist) {
-    //         if (element.getUser() == user) {
-    //           console.log("[ Eliminando la playlist... ]");
-    //           this.playlists.splice(index, 1);
-    //           console.log("Se ha eliminado playlist correctamente");
-    //         } else {
-    //           console.log("[ No tiene permisos para eliminar esta playlist... ]");
-    //         }
-    //       } else {
-    //         console.log("[ No se ha encontrado la playlist... ]");
-    //       }
-    //     });
-    //     write.Write('playlist', this.playlists);
-    //   });
-    // });
   }
 
   findPlaylist(name: string): Playlist {

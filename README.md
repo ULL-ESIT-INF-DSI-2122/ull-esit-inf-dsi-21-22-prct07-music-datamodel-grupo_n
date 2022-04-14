@@ -6,7 +6,7 @@
 ## PRÁCTICA 07 - BIBLIOTECA MUSICAL
 
 # **1) INTRODUCCIÓN**  
-
+En esta práctica se han desarrollado 
 
 # **2) MIEMBROS**
 Esta práctica ha sido desarrollada por el **Grupo N**, el cual está compuesto por tres integrantes:  
@@ -336,10 +336,24 @@ Para otras consultas sobre la clase, puede consultar el código completo en el s
 [-> read.ts](https://github.com/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct07-music-datamodel-grupo_n/blob/main/src/Data/read.ts)
 
 ## **3.3) FUNCIONAMIENTO**
+Para el diseño de la clase funcionality tenemos una lista de canciones, una lista de artistas, una lista de grupos, una lista de albums y una lista de generos. A estos atributos accederemos a travez de la libreria **inquirer.js** para que sea una manera interactiva de busqueda de informacion para el usuario. Para esta interaccion primero hemos de definir unas cuantas opciones como son:
+
+```typescript
+enum Options {
+  songs = "Canciones",
+  artist = "Artistas",
+  group = "Grupos",
+  albums = "Albumes",
+  gender = "Generos"
+}
+```
+
 
 ## **3.4) GESTOR**
 
 ## **4) NOTAS SOBRE LA PRACTICA**
+
+En primer lugar queremos aclarar que en esta práctica no hemos logrado hacer uso del `Read()`
 
 ## **5) REFERENCIAS**
 Las referecias que hemos usado durante el desarrollo de la practica han sido: 
